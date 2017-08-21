@@ -18,9 +18,8 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 lat         | DECIMAL(3,3) | not null
-long         | DECIMAL(3,3) | not null
+lng         | DECIMAL(3,3) | not null
 description | string    | not null,
-body        | text      | not null
 amenities   | ?         | not null
 ** two or more of the above column
 host_id     | integer   | not null, foreign key (references users), indexed
@@ -39,7 +38,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users), indexed
-description | text      |
+body        | text      |
 cleanliness | integer   | not null
 location    | integer   | not null
 value       | integer   | not null

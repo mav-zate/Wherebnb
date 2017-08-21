@@ -45,11 +45,3 @@ location    | integer   | not null
 value       | integer   | not null
 communication | integer   | not null
 date-time   | timestamp | not null
-
-
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed

@@ -3,7 +3,7 @@
 **AuthFormContainer**
  - AuthForm
 
-** BnbIndex **
+**BnbIndex**
  - BnbindexItem
 
 
@@ -19,7 +19,7 @@
  - ReviewPresentation
 
 
-** OverviewContainer **
+**OverviewContainer**
  - Overview Presentation
 
 
@@ -44,5 +44,4 @@
 | "/log-in" | "AuthFormContainer" |
 | "/bnb" | "BnbIndex" |
 | "/bnb/:id" | "BnbContainer"
-| "/new-note" | "NewNoteContainer" |
 | "/search" | "Search" |

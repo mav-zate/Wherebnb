@@ -57,6 +57,15 @@
       overall: 3,
       date-time: 2017-8-20-22:18:26,
     }
+
+    session: {
+      currentUser: {
+        id: 1,
+        first_name: 'Jane',
+        last_name: 'Doe',
+      }
+      errors: [],
+    }
   }
 }
 ```

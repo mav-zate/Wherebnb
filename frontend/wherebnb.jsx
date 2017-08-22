@@ -11,12 +11,14 @@ window.signup = signup;
 window.login = login;
 window.logout = logout;
 
-$.ajax({
-  email: 'calvin@gmail.com',
-  first_name: 'Calvin',
-  last_name: 'Jee',
-  password: 'password',
-  language: 'English',
-  country: 'United States',
-  
-})
+// $.ajax({
+//   email: 'calvin@gmail.com',
+//   first_name: 'Calvin',
+//   last_name: 'Jee',
+//   password: 'password',
+//   language: 'English',
+//   country: 'United States',
+// })
+
+
+// update state to include session slice

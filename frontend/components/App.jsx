@@ -11,11 +11,11 @@ const App = () => (
     </header>
 
 
+    <Route path="/login" component={SessionFormContainer} />
+    <Route path="/signup" component={SessionFormContainer} />
   </div>
 );
 
 
-// <Route path="/login" component={SessionFormContainer} />
-// <Route path="/signup" component={SessionFormContainer} />
 
 export default App;

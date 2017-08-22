@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Redirect } from 'react-router';
 
 
 class SessionForm extends React.Component {
@@ -36,31 +37,35 @@ class SessionForm extends React.Component {
     if (this.props.loggedIn) {
       return <Redirect to="/"/>;
     }
+
+    debugger
+
     return(
       <div>
         <h1>Welcome to Benchbnb!</h1>
-        <p>{this.props.formType }, or {this.notFormType(this.props.formType)}</p>
+
         <p className="errors">{this.props.errors}</p>
+        <p> {this.props.formType}, or {this.notFormType(this.props.formType)} </p>
         <form onSubmit={this.handleSubmit}>
+
           <label>Username:
             <input
               type="text"
               value={this.state.username}
               onChange={this.update('username')}
-            />
+              />
           </label>
 
-          <br/>
+
+            <br/>
 
           <label>Password:
             <input
               type="password"
               value={this.state.password}
               onChange={this.update('password')}
-            />
+              />
           </label>
-
-          <br/>
 
           <input type="submit" value="Submit" />
         </form>

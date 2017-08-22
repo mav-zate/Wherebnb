@@ -23,3 +23,6 @@ const sessionReducer = (state = _defaultState, action) => {
       return state;
   }
 };
+
+
+export default sessionReducer;

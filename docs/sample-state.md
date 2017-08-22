@@ -7,6 +7,8 @@
        email: 'first_user@gmail.com',
        first_name: 'Jane',
        last_name: 'Doe',
+       language: 'English',
+       country: 'United States',
        profile_pic: 'paperclip url',
   },
 

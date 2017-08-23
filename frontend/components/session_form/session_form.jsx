@@ -96,16 +96,14 @@ class SessionForm extends React.Component {
   footerMessage(formType) {
     if (formType === 'login') {
       return (
-        <span>
-          Don't have an account?
-          <Link to="/signup">Sign up</Link>
+        <span className="session-footer">
+          Don't have an account? <Link to="/signup">Sign up</Link>
         </span>
       );
     } else {
       return (
-        <span>
-          Already have a Wherebnb account?
-          <Link to="/login">Log in</Link>
+        <span className="session-footer">
+          Already have a Wherebnb account? <Link to="/login">Log in</Link>
         </span>
       );
     }

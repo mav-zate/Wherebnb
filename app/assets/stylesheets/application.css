@@ -67,6 +67,7 @@
 
 div, span, p, h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
+  color: #484848;
 }
 
 
@@ -94,15 +95,12 @@ div, span, p, h1, h2, h3 {
 }
 
 .greeting > button {
-  padding: 0px 6px 3px 6px;
-}
-
-.greeting > button:hover {
-  border-bottom: 2px solid #767676;
+  padding: 0px 16px 0 16px;
 }
 
 .auth-button > a {
   text-decoration: none;
+  padding: 0px 0px 8px 0px;
 }
 
 .inner-auth {
@@ -110,6 +108,11 @@ div, span, p, h1, h2, h3 {
   display: flex;
   align-items: flex-end;
   text-decoration: none;
+  padding: 0 0 8px 0;
+}
+
+.inner-auth:hover {
+  border-bottom: 2px solid #767676;
 }
 
 .auth-button {
@@ -117,6 +120,8 @@ div, span, p, h1, h2, h3 {
   border: none;
   background-color: transparent;
   height: 100%;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 #session-modal {
@@ -125,7 +130,7 @@ div, span, p, h1, h2, h3 {
 }
 
 #login-message {
-  margin-bottom: 24px;
+  margin: 24px 0 24px 0;
 }
 
 #login-message > h1 {
@@ -136,6 +141,7 @@ div, span, p, h1, h2, h3 {
 .auth-input {
   padding: 11px;
   font-size: 19px;
+  margin: 16px 0 16px 0;
 }
 
 #session-form-button {
@@ -155,3 +161,12 @@ div, span, p, h1, h2, h3 {
   color: #484848;
   font-weight: 300px;
 }
+
+.session-footer > a {
+  text-decoration: none;
+  color: #008489;
+}
+
+/*Link color: #008489*/
+
+/*grey link color: #484848*/

@@ -87,7 +87,7 @@ class SessionForm extends React.Component {
     }
     return(
       <div>
-        <h1>Welcome to Benchbnb!</h1>
+        <h1>Welcome to Wherebnb?</h1>
 
         <p className="errors">{this.props.errors}</p>
         <form onSubmit={this.handleSubmit}>

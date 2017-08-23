@@ -18,7 +18,6 @@ const customStyles = {
 };
 
 
-
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
@@ -26,18 +25,12 @@ class Greeting extends React.Component {
       modalIsOpen: false,
     };
     this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
   openModal() {
     this.setState({modalIsOpen: true});
   }
-
-  // afterOpenModal() {
-  //   // references are now sync'd and can be accessed.
-  //   // this.subtitle.style.color = '#f00';
-  // }
 
   closeModal() {
     this.setState({modalIsOpen: false});
@@ -56,19 +49,7 @@ class Greeting extends React.Component {
     } else {
       return (
         <div id="greeting">
-          <button onClick={this.openModal}>Sign up!</button>
-            <Modal
-              isOpen={this.state.modalIsOpen}
-              onAfterOpen={this.afterOpenModal}
-              onRequestClose={this.closeModal}
-              style={customStyles}
-              contentLabel="Example Modal"
-            >
-
-            <button onClick={this.closeModal}>X</button>
-            <AuthRoute path="/signup" component={SessionFormContainer} />
-
-            </Modal>
+          <button><Link to="/signup">Sign up!</Link></button>
           <br/>
           <button><Link to="/login">Log in!</Link></button>
         </div>

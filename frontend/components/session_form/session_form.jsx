@@ -21,13 +21,16 @@ class SessionForm extends React.Component {
     e.preventDefault();
     let user;
     if (this.props.formType === 'signup') {
-      user = Object.assign({}, this.state);
+      user = {};
+      user.email = this.state.email;
+      user.password = this.state.password;
+      user.first_name = this.state.first_name;
+      user.last_name = this.state.first_name;
     } else {
       user = {};
       user.email = this.state.email;
       user.password = this.state.password;
     }
-    debugger
     this.props.processForm(user);
   }
 
@@ -87,7 +90,6 @@ class SessionForm extends React.Component {
         <h1>Welcome to Benchbnb!</h1>
 
         <p className="errors">{this.props.errors}</p>
-        <p> {this.props.formType}, or  {this.notFormType(this.props.formType)}</p>
         <form onSubmit={this.handleSubmit}>
 
           <label>email:

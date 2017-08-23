@@ -65,34 +65,93 @@
 
 /* HEADER CSS...PUT INTO OWN FILE WHEN YOU CAN*/
 
-#greeting {
-  padding: 10px;
-  height: 100%;
+div, span, p, h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+#app-header {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#greeting > button:nth-child(1) {
-  padding-right: 2px;
-  height: 30%;
-}
-
-#greeting > button:nth-child(3) {
-  padding-left: 2px;
-  height: 30%;
-}
-
-
-header {
-  display: flex;
-  background: pink;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  height: 70px;
+  align-items: flex-start;
+  height: 105px;
+  border-bottom: 1px solid #e4e4e4;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-header > h1 {
+#app-header > h1 {
   padding: 10px;
+}
+
+.greeting {
+  padding: 0 10px 10px 10px;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.greeting > button {
+  padding: 0px 6px 3px 6px;
+}
+
+.greeting > button:hover {
+  border-bottom: 2px solid #767676;
+}
+
+.auth-button > a {
+  text-decoration: none;
+}
+
+.inner-auth {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+}
+
+.auth-button {
+  height: 30%;
+  border: none;
+  background-color: transparent;
+  height: 100%;
+}
+
+#session-modal {
+  height: 300px;
+  width: 300px;
+}
+
+#login-message {
+  margin-bottom: 24px;
+}
+
+#login-message > h1 {
+  font-size: 28px;
+  font-weight: 700px;
+}
+
+.auth-input {
+  padding: 11px;
+  font-size: 19px;
+}
+
+#session-form-button {
+  background: #FF5A5F;
+  border-radius: 4px;
+  font-size: 19px;
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  width: 100%;
+}
+
+#session-form-footer {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid #e4e4e4;
+  color: #484848;
+  font-weight: 300px;
 }

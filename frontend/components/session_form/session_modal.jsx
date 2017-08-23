@@ -5,12 +5,15 @@ import SessionFormContainer from './session_form_container';
 
 const customStyles = {
   content : {
-    top                   : '50%',
+    top                   : '30%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
-    marginRight           : '-70%',
+    marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)'
+  },
+  overlay: {
+    backgroundColor       : 'rgba(0, 0, 0, 0.75)',
   }
 };
 
@@ -42,11 +45,12 @@ class SessionModal extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Example Modal"
+          id=""
         >
-
-
+        <div id="session-modal">
           <button onClick={this.closeModal}>X</button>
-            <SessionFormContainer />
+          <SessionFormContainer />
+        </div>
         </Modal>
     );
   }

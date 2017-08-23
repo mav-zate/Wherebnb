@@ -48,10 +48,22 @@ class Greeting extends React.Component {
       );
     } else {
       return (
-        <div id="greeting">
-          <button><Link to="/signup">Sign up!</Link></button>
+        <div className="greeting">
+          <button className="auth-button">
+            <Link to="/signup">
+              <div className="inner-auth">
+                  Sign up
+              </div>
+            </Link>
+          </button>
           <br/>
-          <button><Link to="/login">Log in!</Link></button>
+          <button className="auth-button">
+            <Link to="/login">
+              <div className="inner-auth">
+                  Log in
+              </div>
+            </Link>
+          </button>
         </div>
       );
     }

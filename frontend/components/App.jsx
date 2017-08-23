@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 
 const App = () => (
   <div>
-    <header>
+    <header id="app-header">
       <h1>WhereBnb?</h1>
       <GreetingContainer />
     </header>

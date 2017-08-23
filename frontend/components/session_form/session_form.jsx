@@ -27,6 +27,7 @@ class SessionForm extends React.Component {
       user.email = this.state.email;
       user.password = this.state.password;
     }
+    debugger
     this.props.processForm(user);
   }
 
@@ -54,7 +55,7 @@ class SessionForm extends React.Component {
         <label>first name:
           <input
             type="text"
-            value={this.state.email}
+            value={this.state.first_name}
             onChange={this.update('first_name')}
             />
         </label>
@@ -68,7 +69,7 @@ class SessionForm extends React.Component {
         <label>last name:
           <input
             type="text"
-            value={this.state.email}
+            value={this.state.last_name}
             onChange={this.update('last_name')}
             />
         </label>
@@ -108,7 +109,7 @@ class SessionForm extends React.Component {
               />
           </label>
 
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit"/>
         </form>
       </div>
     );

@@ -4,22 +4,15 @@ import { Link } from 'react-router-dom';
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentUser: null,
-    };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({currentUser: nextProps.currentUser});
-  }
 
   render() {
-    const user = 'user';
-    if (this.state.currentUser) {
+    if (this.props.currentUser) {
       return (
         <div id="greeting">
           <h1>Hello, {this.props.currentUser.first_name}</h1>
-          <button onClick={logout}>Log out!</button>
+          <button onClick={this.props.logout}>Log out!</button>
         </div>
       );
     } else {

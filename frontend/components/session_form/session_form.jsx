@@ -1,22 +1,37 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router';
+import { Link, Redirect } from 'react-router-dom';
 
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: ""
+      email: "",
+      password: "",
+      first_name: "",
+      last_name: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.notFormType = this.notFormType.bind(this);
+    this.firstName = this.firstName.bind(this);
+    this.lastName = this.lastName.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    let user;
+    if (this.props.formType === 'signup') {
+      user = Object.assign({}, this.state);
+    } else {
+      user = {};
+      user.email = this.state.email;
+      user.password = this.state.password;
+    }
     this.props.processForm(user);
+  }
+
+  willReceiveProps(nextProps) {
+    this.setState({errors: nextProps.errors});
   }
 
   update(field) {
@@ -27,39 +42,65 @@ class SessionForm extends React.Component {
 
   notFormType(formType) {
     if (formType === 'login') {
-      return <Link to="/signup">Sign up</Link>;
+      return (<Link to="/signup">Sign up</Link>);
     } else {
-      return <Link to="/login">Log in </Link>;
+      return (<Link to="/login">Log in</Link>);
     }
   }
+
+  firstName(formType) {
+    if (formType === 'signup') {
+      return (
+        <label>first name:
+          <input
+            type="text"
+            value={this.state.email}
+            onChange={this.update('first_name')}
+            />
+        </label>
+      );
+    }
+  }
+
+  lastName(formType) {
+    if (formType === 'signup') {
+      return (
+        <label>last name:
+          <input
+            type="text"
+            value={this.state.email}
+            onChange={this.update('last_name')}
+            />
+        </label>
+      );
+    }
+  }
+
 
   render() {
     if (this.props.loggedIn) {
       return <Redirect to="/"/>;
     }
-
-    debugger
-
     return(
       <div>
         <h1>Welcome to Benchbnb!</h1>
 
         <p className="errors">{this.props.errors}</p>
-        <p> {this.props.formType}, or {this.notFormType(this.props.formType)} </p>
+        <p> {this.props.formType}, or  {this.notFormType(this.props.formType)}</p>
         <form onSubmit={this.handleSubmit}>
 
-          <label>Username:
+          <label>email:
             <input
               type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
+              value={this.state.email}
+              onChange={this.update('email')}
               />
           </label>
 
+          <div>{this.firstName(this.props.formType)}</div>
+          <div>{this.lastName(this.props.formType)}</div>
 
-            <br/>
-
-          <label>Password:
+          <label>password:
             <input
               type="password"
               value={this.state.password}

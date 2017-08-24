@@ -31,7 +31,7 @@ weekly_discount | decimal | not null
 monthly_discount | decimal | not null
 amenities* | boolean | not null
 
-###* Amenities consist of various columns
+### Amenities consist of many columns
 
 
 
@@ -41,8 +41,8 @@ column name | data type | details
 id          | integer   | not null, primary key
 booker_id   | integer   | not null, foreign key (references users)
 bnb_id      | integer   | not null, foreign key (references bnbs)
-start_date  | timestamp | not null
-end_date    | timestamp | not null
+start_date  | date      | not null
+end_date    | date      | not null
 
 
 ## reviews

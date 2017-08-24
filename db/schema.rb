@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824125917) do
+ActiveRecord::Schema.define(version: 20170824135151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20170824125917) do
     t.boolean  "smoking_allowed",     null: false
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "booker_id",  null: false
+    t.integer  "bnb_id",     null: false
+    t.date     "start_date", null: false
+    t.date     "end_date",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bnb_id", "booker_id"], name: "index_bookings_on_bnb_id_and_booker_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

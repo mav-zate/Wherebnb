@@ -5,6 +5,26 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_one :bnb,
+    class_name: :Bnb,
+    foreign_key: :host_id,
+    primary_key: :id
+
+  has_many :bookings,
+    class_name: :Booking,
+    foreign_key: :booker_id,
+    primary_key: :id
+
+  has_many :bnbs,
+    through: :bookings,
+    source: :bnb
+
+  has_many :reviews,
+    class_name: :Review,
+    foreign_key: :author_id,
+    primary_key: :id
+
+
   attr_reader :password
 
   def self.find_by_credentials(email, password)

@@ -51,11 +51,10 @@ column name | data type | details
 id          | integer   | not null, primary key
 bnb_id      | integer   | not null, foreign key (references bnbs), indexed
 author_id   | integer   | not null, foreign key (references users), indexed
-body        | text      | not null,
+body        | text      | not null
 accuracy    | integer   | not null
 communication | integer   | not null
 cleanliness       | integer   | not null
 location | integer   | not null
 check_in    | integer   | not null
 value       | integer   | not null
-date-time   | timestamp | not null

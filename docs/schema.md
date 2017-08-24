@@ -17,30 +17,45 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-lat         | DECIMAL(3,3) | not null
-lng         | DECIMAL(3,3) | not null
-description | string    | not null,
-amenities   | ?         | not null
-** two or more of the above column
 host_id     | integer   | not null, foreign key (references users), indexed
+lat         | float     | not null
+lng         | float     | not null
+general_description | text    | not null
+space_description | text    | not null
+side_notes | text    | not null
+accomodation_count | integer    | not null
+price | decimal | not null
+security_deposit | decimal | not null
+cleaning_fee | decimal | not null
+weekly_discount | decimal | not null
+monthly_discount | decimal | not null
+amenities* | boolean | not null
+
+###* Amenities consist of various columns
 
 
-## BnbReviews
+
+## bookings
 column name | data type | details
 ------------|-----------|-----------------------
-id          | integer   | primary key
-bnbId       | integer   | not null, foreign key (references bnbs)
-reviewId    | integer   | not null, foreign key (references reviews)
+id          | integer   | not null, primary key
+booker_id   | integer   | not null, foreign key (references users)
+bnb_id      | integer   | not null, foreign key (references bnbs)
+start_date  | timestamp | not null
+end_date    | timestamp | not null
 
 
 ## reviews
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+bnb_id      | integer   | not null, foreign key (references bnbs), indexed
 author_id   | integer   | not null, foreign key (references users), indexed
-body        | text      |
-cleanliness | integer   | not null
-location    | integer   | not null
-value       | integer   | not null
+body        | text      | not null,
+accuracy    | integer   | not null
 communication | integer   | not null
+cleanliness       | integer   | not null
+location | integer   | not null
+check_in    | integer   | not null
+value       | integer   | not null
 date-time   | timestamp | not null

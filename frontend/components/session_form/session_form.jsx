@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
           type="text"
           value={this.state.last_name}
           onChange={this.update('last_name')}
-          placeholder="First Name"
+          placeholder="Last Name"
           className="auth-input"
           />
       );

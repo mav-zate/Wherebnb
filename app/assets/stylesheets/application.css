@@ -68,6 +68,7 @@
 div, span, p, h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
   color: #484848;
+  font-weight: normal;
 }
 
 
@@ -135,7 +136,7 @@ div, span, p, h1, h2, h3 {
 
 #login-message > h1 {
   font-size: 28px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 .auth-input {
@@ -159,13 +160,23 @@ div, span, p, h1, h2, h3 {
   padding: 10px;
   border-top: 1px solid #e4e4e4;
   color: #484848;
-  font-weight: 300px;
+  font-weight: 300;
 }
 
 .session-footer > a {
   text-decoration: none;
   color: #008489;
 }
+
+.indexItem-topRow > span {
+  font-weight: 700;
+}
+
+.indexItem-midRow > span {
+  font-weight: 300;
+}
+
+
 
 /*Link color: #008489*/
 

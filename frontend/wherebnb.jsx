@@ -5,6 +5,8 @@ import Root from './components/root';
 
 // test imports
 import { signup, login, logout } from './actions/session_actions';
+import { fetchAllBnbs } from './util/bnb_api_util';
+import { requestAllBnbs } from './actions/bnb_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.signup = signup;
 window.login = login;
 window.logout = logout;
+window.requestAllBnbs = requestAllBnbs;
 
 // $.ajax({
 //   email: 'calvin@gmail.com',

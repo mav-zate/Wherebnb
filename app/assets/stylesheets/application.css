@@ -186,9 +186,42 @@ div, span, p, h1, h2, h3 {
 
 .indexItem-topRow > span {
   font-weight: 700;
+  font-size: 15px;
+  padding: 0 4px 0 0;
 }
 
 .indexItem-midRow > span {
+  font-weight: 300;
+  padding: 0 4px 0 0;
+}
+
+.indexItem-bottomRow {
+  margin: 5px 0 0 0;
+  display: flex;
+  align-content: flex-start;
+}
+
+.indexItem-bottomRow img {
+  padding: 0px 1px 0 0;
+}
+
+.indexItem-bottomRow > span {
+  display: flex;
+  align-items: center;
+}
+
+#review-count  {
+  padding: 4px 0 0 2px;
+  font-size: 12px;
+}
+
+#Index-unreviewedBnb {
+  background-color: #008489;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 3px;
+  margin: 10px 0 0 0;
   font-weight: 300;
 }
 

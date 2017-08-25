@@ -63,3 +63,24 @@ bnb5 = Bnb.create!(title: 'Rustic ranch', host_id: u5.id, lat: Faker::Address.un
         internet: true, kitchen: true, parking: true, essentials: true, pets_allowed: true,
         smoking_allowed: true, rating: 3, bed_count: 2, room_type: 'shared room',
         home_type: 'ranch', image: File.open('app/assets/images/treehouse.jpg'))
+
+Review.destroy_all
+r1 = Review.create!(bnb_id: bnb1.id, author_id: u2.id, body: 'Wonderful place with great hosts.',
+                    accuracy: 5, communication: 5, cleanliness: 5, location: 5, check_in: 5, value: 5,
+                    rating: 5)
+
+r2 = Review.create!(bnb_id: bnb1.id, author_id: u3.id, body: 'Very nice--I like!',
+                    accuracy: 5, communication: 5, cleanliness: 5, location: 5, check_in: 5, value: 5,
+                    rating: 5)
+
+r3 = Review.create!(bnb_id: bnb1.id, author_id: u4.id, body: 'This place sucked',
+                    accuracy: 5, communication: 5, cleanliness: 5, location: 5, check_in: 5, value: 5,
+                    rating: 5)
+
+r4 = Review.create!(bnb_id: bnb2.id, author_id: u4.id, body: '5/5 would come back again',
+                    accuracy: 5, communication: 5, cleanliness: 5, location: 5, check_in: 5, value: 5,
+                    rating: 5)
+
+r5 = Review.create!(bnb_id: bnb3.id, author_id: u5.id, body: 'Woo hoo!',
+                    accuracy: 5, communication: 5, cleanliness: 5, location: 5, check_in: 5, value: 5,
+                    rating: 5)

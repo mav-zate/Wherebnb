@@ -8,11 +8,23 @@ class BnbIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.renderStars = this.renderStars.bind(this);
+    this.renderBeds = this.renderBeds.bind(this);
+    this.calculateRating = this.calculateRating.bind(this);
   }
 
 
-  renderStars(rating) {
-    debugger
+  renderBeds(bedCount) {
+    return bedCount > 1 ? `${bedCount} beds` : `1 bed`;
+  }
+
+
+  renderStars(reviews) {
+    if (reviews.length === 0) {
+      return <span id="Index-unreviewedBnb">NEW</span>;
+    } else {
+      var rating = this.calculateRating(reviews);
+    }
+
     switch (rating) {
       case 1:
         return (
@@ -22,6 +34,7 @@ class BnbIndexItem extends React.Component {
             <img src={GREY_STAR}></img>
             <img src={GREY_STAR}></img>
             <img src={GREY_STAR}></img>
+            <span id="review-count">{reviews.length}</span>
           </span>
         );
       case 2:
@@ -32,6 +45,7 @@ class BnbIndexItem extends React.Component {
           <img src={GREY_STAR}></img>
           <img src={GREY_STAR}></img>
           <img src={GREY_STAR}></img>
+          <span id="review-count">{reviews.length}</span>
         </span>
       );
       case 3:
@@ -42,6 +56,7 @@ class BnbIndexItem extends React.Component {
           <img src={BLUE_STAR}></img>
           <img src={GREY_STAR}></img>
           <img src={GREY_STAR}></img>
+          <span id="review-count">{reviews.length}</span>
         </span>
       );
       case 4:
@@ -52,6 +67,7 @@ class BnbIndexItem extends React.Component {
           <img src={BLUE_STAR}></img>
           <img src={BLUE_STAR}></img>
           <img src={GREY_STAR}></img>
+          <span id="review-count">{reviews.length}</span>
         </span>
       );
       case 5:
@@ -62,11 +78,22 @@ class BnbIndexItem extends React.Component {
           <img src={BLUE_STAR}></img>
           <img src={BLUE_STAR}></img>
           <img src={BLUE_STAR}></img>
+          <span id="review-count">{reviews.length}</span>
         </span>
       );
       default:
 
     }
+  }
+
+  calculateRating(reviews) {
+    let sum = 0;
+
+    for (let i = 0; i < reviews.length; i++) {
+      sum += reviews[i].rating;
+    }
+
+    return Math.floor(sum / reviews.length);
   }
 
   render() {
@@ -79,18 +106,19 @@ class BnbIndexItem extends React.Component {
         </div>
         <div className="indexItem-topRow">
           <span>From</span>
-          <span>{this.props.bnb.price}</span>
+          <span>{Math.floor(this.props.bnb.price)}</span>
           <span>·</span>
           <span>{this.props.bnb.title}</span>
         </div>
         <div className="indexItem-midRow">
-          <span>{this.props.bnb.home_type}</span>
-          <span>·</span>
           <span>{this.props.bnb.room_type}</span>
+          <span>·</span>
+          <span>{this.renderBeds(this.props.bnb.bed_count)}</span>
         </div>
         <div className="indexItem-bottomRow">
-          <span>{this.renderStars(this.props.bnb.rating)}</span>
+          {this.renderStars(this.props.bnb.reviews)}
         </div>
+
       </li>
   );
   }

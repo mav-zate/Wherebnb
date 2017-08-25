@@ -3,7 +3,7 @@ class Bnb < ApplicationRecord
   validates :accomodation_count, :price, :security_deposit, presence: true
   validates :cleaning_fee, :weekly_discount, :monthly_discount, presence: true
   validates :wifi, :internet, :kitchen, :parking, :essentials, inclusion: { in: [true, false] }
-  validates :pets_allowed, :smoking_allowed, inclusion: { in: [true, false] }
+  validates :rating, inclusion: 1..5
 
   # image validations
   has_attached_file :image, default_url: "airbnb_logo.png"
@@ -27,4 +27,6 @@ class Bnb < ApplicationRecord
   has_many :guests,
     through: :bookings,
     source: :booker
+
+
 end

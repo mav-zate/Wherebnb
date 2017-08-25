@@ -1,6 +1,7 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import SessionModal from './session_form/session_modal';
+import BnbIndexContainer from './bnbs/bnb_index_container';
 import { AuthRoute } from '../util/route_util';
 import { Route } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ const App = () => (
     </header>
 
 
+    <Route path="/" component={BnbIndexContainer} />
     <AuthRoute path="/login" component={SessionModal} />
     <AuthRoute path="/signup" component={SessionModal} />
   </div>

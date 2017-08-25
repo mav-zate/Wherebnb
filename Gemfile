@@ -33,6 +33,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails'
 gem "paperclip", '~> 5.0.0'
 gem 'figaro'
+gem 'aws-sdk', '>= 2.0'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -42,6 +44,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'binding_of_caller'
   gem 'better_errors'
+  gem 'faker'
 end
 
 group :development do

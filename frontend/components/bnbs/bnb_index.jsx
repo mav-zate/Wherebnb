@@ -7,25 +7,21 @@ class BnbIndex extends React.Component {
     this.state = {
       bnbs: [],
     };
-    this.keyMaker = this.keyMaker.bind(this);
   }
 
   componentWillMount() {
     this.props.requestAllBnbs();
   }
 
-  keyMaker(id) {
-    return `bnbIndex-item-${id}`;
-  }
 
   render() {
     return (
-      <ul>
+      <ul id="index">
         {this.props.bnbs.map(bnb => (
           <BnbIndexItem
             key={bnb.id}
             bnb={bnb}
-            id={this.keyMaker(bnb.id)}/>)
+          />)
         )}
       </ul>
     );

@@ -163,9 +163,25 @@ div, span, p, h1, h2, h3 {
   font-weight: 300;
 }
 
+
 .session-footer > a {
   text-decoration: none;
   color: #008489;
+}
+
+#index {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.indexItem {
+  width: 300px;
+  height: 300px;
+}
+
+.indexItem-image {
+  width: 200px;
+  height: 200px;
 }
 
 .indexItem-topRow > span {
@@ -181,3 +197,5 @@ div, span, p, h1, h2, h3 {
 /*Link color: #008489*/
 
 /*grey link color: #484848*/
+
+/* grey star color: #D8D8D8*/

@@ -5,6 +5,10 @@ class Bnb < ApplicationRecord
   validates :wifi, :internet, :kitchen, :parking, :essentials, inclusion: { in: [true, false] }
   validates :pets_allowed, :smoking_allowed, inclusion: { in: [true, false] }
 
+  # image validations
+  has_attached_file :image, default_url: "airbnb_logo.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
   belongs_to :host,
     class_name: :User,
     foreign_key: :host_id,

@@ -170,17 +170,22 @@ div, span, p, h1, h2, h3 {
 }
 
 #index {
+  width: 66%
+}
+
+#index-allItems {
   display: flex;
   flex-flow: row wrap;
 }
 
 .indexItem {
+  padding: 8px 8px 12px 8px;
   width: 300px;
   height: 300px;
 }
 
 .indexItem-image {
-  width: 200px;
+  width: 300px;
   height: 200px;
 }
 
@@ -221,7 +226,6 @@ div, span, p, h1, h2, h3 {
   font-size: 12px;
   border-radius: 4px;
   padding: 3px;
-  margin: 10px 0 0 0;
   font-weight: 300;
 }
 

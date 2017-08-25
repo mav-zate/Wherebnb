@@ -16,14 +16,16 @@ class BnbIndex extends React.Component {
 
   render() {
     return (
-      <ul id="index">
-        {this.props.bnbs.map(bnb => (
-          <BnbIndexItem
-            key={bnb.id}
-            bnb={bnb}
-          />)
-        )}
-      </ul>
+      <div id="index">
+        <ul id="index-allItems">
+          {this.props.bnbs.map(bnb => (
+            <BnbIndexItem
+              key={bnb.id}
+              bnb={bnb}
+            />)
+          )}
+        </ul>
+      </div>
     );
   }
 }

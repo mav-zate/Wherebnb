@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
-import  BnbIndex from './bnb_index';
+import  Search from '../search/search';
 import { requestAllBnbs } from '../../actions/bnb_actions';
 import { selectAllBnbs } from '../../reducers/selectors';
+
 
 const mapStateToProps = (state) => {
   return {
@@ -16,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(BnbIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

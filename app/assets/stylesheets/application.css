@@ -63,7 +63,7 @@
  }
 
 
-/* HEADER CSS...PUT INTO OWN FILE WHEN YOU CAN*/
+/**************** HEADER **************/
 
 div, span, p, h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
@@ -103,6 +103,10 @@ div, span, p, h1, h2, h3 {
   text-decoration: none;
   padding: 0px 0px 8px 0px;
 }
+
+
+/**************** AUTHENTICATION **************/
+
 
 .inner-auth {
   height: 100%;
@@ -218,6 +222,8 @@ div, span, p, h1, h2, h3 {
   color: #008489;
 }
 
+/**************** BNB INDEX **************/
+
 #index {
   width: 66%
 }
@@ -278,6 +284,13 @@ div, span, p, h1, h2, h3 {
   font-weight: 300;
 }
 
+
+/* BNB MAP */
+
+#map-container {
+  width: 500px;
+  height: 500px;
+}
 
 
 /*Link color: #008489*/

@@ -125,9 +125,28 @@ div, span, p, h1, h2, h3 {
   font-size: 14px;
 }
 
-#session-modal {
-  height: 300px;
-  width: 300px;
+.ReactModal__Body--open {
+    overflow: hidden;
+}
+
+
+#session-modal-close:hover {
+  cursor: pointer;
+}
+
+#session-form-parent {
+  height: 100%;
+  width: 100%;
+  background: white;
+  opacity: 1;
+  padding: 33px;
+}
+
+#session-form {
+  height: 80%;
+  width: 100%;
+  background: white;
+  opacity: 1;
 }
 
 #login-message {
@@ -139,16 +158,43 @@ div, span, p, h1, h2, h3 {
   font-weight: 700;
 }
 
+.auth-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
 .auth-input {
   padding: 11px;
+  margin: 0 20px 20px 20px;
   font-size: 19px;
-  margin: 16px 0 16px 0;
+  font-weight: 300;
+  margin: 0 0 16px 0;
+  width: 80%;
+  border-width: 1px 0 1px 1px;
+  border-style: solid none solid solid;
+  border-color: #e4e4e4;
+}
+
+.auth-input-icon {
+  width: 14%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px 1px 1px 0;
+  border-style: solid solid solid none;
+  border-color: #e4e4e4;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 #session-form-button {
   background: #FF5A5F;
   border-radius: 4px;
-  font-size: 19px;
+  font-size: 17px;
   border: none;
   padding: 12px 24px;
   color: white;
@@ -156,11 +202,14 @@ div, span, p, h1, h2, h3 {
 }
 
 #session-form-footer {
+  width: 90%;
   margin-top: 10px;
-  padding: 10px;
+  padding: 20px;
   border-top: 1px solid #e4e4e4;
   color: #484848;
   font-weight: 300;
+  display: flex;
+  justify-content: center;
 }
 
 

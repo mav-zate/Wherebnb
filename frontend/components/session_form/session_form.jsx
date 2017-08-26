@@ -2,6 +2,10 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
 
+const MAIL_ICON = "https://s3.amazonaws.com/wherebnb-devo/bnbs/static_images/mail_icon.png";
+const USER_ICON = "https://s3.amazonaws.com/wherebnb-devo/bnbs/static_images/auth_user.png";
+const LOCK_ICON = "https://s3.amazonaws.com/wherebnb-devo/bnbs/static_images/lock_icon.png";
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +14,7 @@ class SessionForm extends React.Component {
       password: "",
       first_name: "",
       last_name: "",
+      errors: [],
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.notFormType = this.notFormType.bind(this);
@@ -37,7 +42,7 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  willReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     this.setState({errors: nextProps.errors});
   }
 
@@ -58,13 +63,18 @@ class SessionForm extends React.Component {
   firstName(formType) {
     if (formType === 'signup') {
       return (
-        <input
-          type="text"
-          value={this.state.first_name}
-          onChange={this.update('first_name')}
-          placeholder="First Name"
-          className="auth-input"
-          />
+        <div className="auth-input-container">
+          <input
+            type="text"
+            value={this.state.first_name}
+            onChange={this.update('first_name')}
+            placeholder="First Name"
+            className="auth-input"
+            />
+          <div className="auth-input-icon">
+            <img src={USER_ICON}/>
+          </div>
+        </div>
       );
     }
   }
@@ -72,13 +82,18 @@ class SessionForm extends React.Component {
   lastName(formType) {
     if (formType === 'signup') {
       return (
-        <input
-          type="text"
-          value={this.state.last_name}
-          onChange={this.update('last_name')}
-          placeholder="Last Name"
-          className="auth-input"
-          />
+        <div className="auth-input-container">
+          <input
+            type="text"
+            value={this.state.last_name}
+            onChange={this.update('last_name')}
+            placeholder="Last Name"
+            className="auth-input"
+            />
+          <div className="auth-input-icon">
+            <img src={USER_ICON}/>
+          </div>
+        </div>
       );
     }
   }
@@ -109,20 +124,25 @@ class SessionForm extends React.Component {
     }
   }
 
+
+  // renderErrors() {
+  //  add method here that renders proper error message
+  // }
+
   render() {
     if (this.props.loggedIn) {
       return <Redirect to="/"/>;
     }
     return(
-      <div>
+      <div id="session-form">
         <div id="login-message">
           {this.welcomeMessage(this.props.formType)}
         </div>
 
-        <p className="errors">{this.props.errors}</p>
+        <p className="errors">{this.state.errors}</p>
         <form onSubmit={this.handleSubmit}>
 
-          <div>
+          <div className="auth-input-container">
             <input
               type="text"
               value={this.state.email}
@@ -130,17 +150,18 @@ class SessionForm extends React.Component {
               placeholder="Email Address"
               className="auth-input"
               />
+            <div className="auth-input-icon">
+              <img src={MAIL_ICON}/>
+            </div>
           </div>
 
-          <div>
-            {this.firstName(this.props.formType)}
-          </div>
 
-          <div>
-            {this.lastName(this.props.formType)}
-          </div>
+          {this.firstName(this.props.formType)}
 
-          <div>
+
+          {this.lastName(this.props.formType)}
+
+          <div className="auth-input-container">
             <input
               type="password"
               value={this.state.password}
@@ -148,6 +169,9 @@ class SessionForm extends React.Component {
               placeholder="Password"
               className="auth-input"
               />
+            <div className="auth-input-icon">
+              <img src={LOCK_ICON}/>
+            </div>
           </div>
 
           <input

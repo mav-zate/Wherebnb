@@ -4,6 +4,7 @@ import React from 'react';
 const BLUE_STAR = "https://s3.amazonaws.com/wherebnb-devo/bnbs/static_images/blue_star.png";
 const GREY_STAR = "https://s3.amazonaws.com/wherebnb-devo/bnbs/static_images/grey_star.png";
 
+
 class BnbIndexItem extends React.Component {
   constructor(props) {
     super(props);

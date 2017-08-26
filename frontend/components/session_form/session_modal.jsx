@@ -3,19 +3,33 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import SessionFormContainer from './session_form_container';
 
+
+const CANCEL_ICON = "https://s3.amazonaws.com/wherebnb-devo/bnbs/static_images/cancel_icon.png";
+
 const customStyles = {
   content : {
-    top                   : '30%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    top                   : '5%',
+    left                  : '5%',
+    right                 : '5%',
+    bottom                : '5%',
+    marginTop             : '5%',
+    marginBottom          : '5%',
+    marginLeft            : '5%',
+    marginRight           : '5%',
+    background            : '000',
+    overflow              : 'visible',
+    borderRadius          : '0',
+    border                : 'none',
+    width                 : '400px',
+    height                : '500px',
+    transform             : 'translate(57%, -10%)',
+    // position              : 'absolute',
   },
   overlay: {
     backgroundColor       : 'rgba(0, 0, 0, 0.75)',
   }
 };
+
 
 class SessionModal extends React.Component {
   constructor(props) {
@@ -47,8 +61,12 @@ class SessionModal extends React.Component {
           contentLabel="Example Modal"
           id=""
         >
-        <div id="session-modal">
-          <button onClick={this.closeModal}>X</button>
+        <div id="session-form-parent">
+          <img
+            id="session-modal-close"
+            onClick={this.closeModal}
+            src={CANCEL_ICON}
+          />
           <SessionFormContainer />
         </div>
         </Modal>

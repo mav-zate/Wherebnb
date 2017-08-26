@@ -6,37 +6,13 @@ import { AuthRoute } from '../../util/route_util';
 import SessionFormContainer from '../session_form/session_form_container';
 
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-70%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
-
-
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       modalIsOpen: false,
     };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
-
-  openModal() {
-    this.setState({modalIsOpen: true});
-  }
-
-  closeModal() {
-    this.setState({modalIsOpen: false});
-    this.props.history.push('/');
-  }
-
 
   render() {
     if (this.props.currentUser) {

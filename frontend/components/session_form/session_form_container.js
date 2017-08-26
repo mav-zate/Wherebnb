@@ -4,10 +4,10 @@ import SessionForm from './session_form';
 import { withRouter } from 'react-router-dom';
 
 
-const mapStateToProps = ({ currentUser, errors }) => {
+const mapStateToProps = ({ currentUser, session }) => {
   return {
     loggedIn: Boolean(currentUser),
-    errors: errors,
+    errors: session.errors,
   };
 };
 

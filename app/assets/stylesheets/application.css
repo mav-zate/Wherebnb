@@ -301,6 +301,10 @@ div, span, p, h1, h2, h3 {
   height: 500px;
 }
 
+#map-conatiner img {
+  font-weight: 700;
+}
+
 
 /*Link color: #008489*/
 

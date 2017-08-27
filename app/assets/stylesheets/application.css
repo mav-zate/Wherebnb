@@ -222,6 +222,15 @@ div, span, p, h1, h2, h3 {
   color: #008489;
 }
 
+
+/**************** SEARCH CONTAINER **************/
+
+#search-container {
+  display: flex;
+  flex-direction: row;
+}
+
+
 /**************** BNB INDEX **************/
 
 #index {
@@ -288,7 +297,7 @@ div, span, p, h1, h2, h3 {
 /* BNB MAP */
 
 #map-container {
-  width: 500px;
+  width: 40%;
   height: 500px;
 }
 

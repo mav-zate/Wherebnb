@@ -29,6 +29,7 @@ window.login = login;
 window.logout = logout;
 window.requestAllBnbs = requestAllBnbs;
 window.selectAllBnbs = selectAllBnbs;
+window.fetchAllBnbs = fetchAllBnbs;
 
 // $.ajax({
 //   email: 'calvin@gmail.com',

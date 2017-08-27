@@ -13,6 +13,22 @@ class BnbMap extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.bnbs);
+    this.map.addListener('idle', () => {
+      const latLngBounds = this.map.getBounds();
+      const northEast = {
+        lat: latLngBounds.getNorthEast().lat(),
+        lng: latLngBounds.getNorthEast().lng(),
+      };
+      const southWest = {
+        lat: latLngBounds.getSouthWest().lat(),
+        lng: latLngBounds.getSouthWest().lng(),
+      }
+      const bounds = {
+        northEast,
+        southWest,
+      };
+      this.props.updateFilter('bounds', bounds);
+    });
   }
 
   componentWillReceiveProps(nextProps) {

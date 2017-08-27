@@ -9,11 +9,6 @@ class BnbIndex extends React.Component {
     };
   }
 
-  componentWillMount() {
-    this.props.requestAllBnbs();
-  }
-
-
   render() {
     return (
       <div id="index">

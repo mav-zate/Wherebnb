@@ -14,14 +14,37 @@ export default class MarkerManager {
     this.map = map;
     this.markers = {};
     this.createMarkerFromBnb = this.createMarkerFromBnb.bind(this);
+    this.bnbArrayToObject = this.bnbArrayToObject.bind(this);
+    this.updateMarkers = this.updateMarkers.bind(this);
+    this.removeMarker = this.removeMarker.bind(this);
   }
 
   updateMarkers(bnbs) {
+
+    // add markers
     bnbs.forEach(bnb => {
       if (this.markers[bnb.id] === undefined) {
         this.createMarkerFromBnb(bnb);
       }
     });
+
+    // eliminate markers
+    let bnbList = this.bnbArrayToObject(bnbs);
+    Object.keys(this.markers).forEach(bnbId => {
+      if (bnbList[bnbId] === undefined) {
+        this.removeMarker(this.markers[bnbId], bnbId);
+      }
+    });
+  }
+
+  bnbArrayToObject(bnbArray) {
+    let bnbList = {};
+
+    bnbArray.forEach(bnb => {
+      bnbList[bnb.id] = bnb;
+    });
+
+    return bnbList;
   }
 
   createMarkerFromBnb(bnb) {
@@ -34,5 +57,10 @@ export default class MarkerManager {
       },
       icon: MARKER_ICON,
     });
+  }
+
+  removeMarker(marker, bnbId) {
+    marker.setMap(null);
+    delete this.markers[bnbId];
   }
 }

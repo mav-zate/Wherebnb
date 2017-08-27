@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import  Search from '../search/search';
 import { requestAllBnbs } from '../../actions/bnb_actions';
 import { selectAllBnbs } from '../../reducers/selectors';
+import { updateFilter } from '../../actions/filter_actions';
 
 
 const mapStateToProps = (state) => {
@@ -10,9 +11,11 @@ const mapStateToProps = (state) => {
   };
 };
 
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    requestAllBnbs: () => dispatch(requestAllBnbs()),
+    requestAllBnbs: (filter) => dispatch(requestAllBnbs(filter)),
+    updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
   };
 };
 

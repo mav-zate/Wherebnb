@@ -222,6 +222,15 @@ div, span, p, h1, h2, h3 {
   color: #008489;
 }
 
+
+/**************** SEARCH CONTAINER **************/
+
+#search-container {
+  display: flex;
+  flex-direction: row;
+}
+
+
 /**************** BNB INDEX **************/
 
 #index {
@@ -288,8 +297,12 @@ div, span, p, h1, h2, h3 {
 /* BNB MAP */
 
 #map-container {
-  width: 500px;
+  width: 40%;
   height: 500px;
+}
+
+#map-conatiner img {
+  font-weight: 700;
 }
 
 
@@ -298,3 +311,5 @@ div, span, p, h1, h2, h3 {
 /*grey link color: #484848*/
 
 /* grey star color: #D8D8D8*/
+
+/* logo color: #FF5A5F*/

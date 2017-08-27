@@ -28,5 +28,12 @@ class Bnb < ApplicationRecord
     through: :bookings,
     source: :booker
 
+  def self.in_bounds(bounds)
+    self
+      .where(["lat < ?", bounds[:northEast][:lat]])
+      .where(["lat > ?", bounds[:southWest][:lat]])
+      .where(["lng < ?", bounds[:northEast][:lng]])
+      .where(["lng > ?", bounds[:southWest][:lng]])
+  end
 
 end

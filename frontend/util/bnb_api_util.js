@@ -5,3 +5,11 @@ export const fetchAllBnbs = (data) => {
     data
   });
 };
+
+
+export const fetchSingleBnb = (bnbId) => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/bnbs/${bnbId}`,
+  });
+};

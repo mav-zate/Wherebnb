@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_BNBS } from '../actions/bnb_actions';
+import { RECEIVE_ALL_BNBS, RECEIVE_SINGLE_BNB } from '../actions/bnb_actions';
 
 
 const BnbsReducer = (state = {}, action) => {
@@ -7,6 +7,11 @@ const BnbsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_BNBS:
       newState = action.bnbs;
+      return newState;
+    case RECEIVE_SINGLE_BNB:
+      debugger
+      newState = Object.assign({}, state, action.bnb);
+      debugger
       return newState;
     default:
     return state;

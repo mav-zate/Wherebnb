@@ -6,8 +6,9 @@ import Root from './components/root';
 // test imports
 import { signup, login, logout } from './actions/session_actions';
 import { fetchAllBnbs } from './util/bnb_api_util';
-import { requestAllBnbs } from './actions/bnb_actions';
+import { requestAllBnbs, requestSingleBnb } from './actions/bnb_actions';
 import { selectAllBnbs } from './reducers/selectors';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
-    // delete window.currentUser;
+    delete window.currentUser;
   } else {
     store = configureStore();
   }
@@ -30,6 +31,7 @@ window.logout = logout;
 window.requestAllBnbs = requestAllBnbs;
 window.selectAllBnbs = selectAllBnbs;
 window.fetchAllBnbs = fetchAllBnbs;
+window.requestSingleBnb = requestSingleBnb;
 
 // $.ajax({
 //   email: 'calvin@gmail.com',

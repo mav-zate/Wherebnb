@@ -107,7 +107,7 @@ class BnbIndexItem extends React.Component {
         </div>
         <div className="indexItem-topRow">
           <span>From</span>
-          <span>{Math.floor(this.props.bnb.price)}</span>
+          <span>{`$${Math.floor(this.props.bnb.price)}`}</span>
           <span>·</span>
           <span>{this.props.bnb.title}</span>
         </div>

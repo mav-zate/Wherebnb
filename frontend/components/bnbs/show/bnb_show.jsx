@@ -2,6 +2,10 @@ import React from 'react';
 import { fetchBnbAddress } from '../../../util/bnb_api_util';
 import { renderStars, calculateRating } from '../star_render_methods';
 import BnbShowOverview from './bnb_show_overview';
+import BnbShowReviews from './bnb_show_reviews';
+import BnbShowHost from './bnb_show_host';
+import BnbShowNeighborhood from './bnb_show_neighborhood';
+
 
 const GOOGLE_KEY = "AIzaSyBG7ngjQtl2whDLcHAzer_CA9OMk9UF8wg";
 
@@ -60,23 +64,41 @@ class BnbShow extends React.Component {
 
 
   render() {
-    let bnb;
-    let host;
     if (this.props.bnbs[this.bnbId] !== undefined) {
-      bnb = this.props.bnbs[this.bnbId];
-      host = bnb.host;
+      let bnb = this.props.bnbs[this.bnbId];
+      let host = bnb.host;
       return (
         <div id="show-page">
           <div id="show-page-image-container">
             <img id="show-page-image"src={bnb.image_url}></img>
           </div>
-          <BnbShowOverview
-            bnb={bnb}
-            host={host}
-            address={this.state.address}
-            renderStars={renderStars}
-          />
 
+          <div id="show-page-under-image">
+            <div id="show-page-info">
+              <BnbShowOverview
+                bnb={bnb}
+                host={host}
+                address={this.state.address}
+                renderStars={renderStars}
+                />
+
+              <BnbShowReviews
+                reviews={bnb.reviews}
+                />
+
+              <BnbShowHost
+                host={host}
+                />
+
+              <BnbShowNeighborhood
+                center={{lat: bnb.lat, lng: bnb.lng}}
+                />
+            </div>
+            <div id="show-page-booking">
+              <p> Bookings placeholder </p>
+            </div>
+
+          </div>
         </div>
       );
     } else {

@@ -316,6 +316,37 @@ body {
 
 /* BNB SHOW PAGE */
 
+#show-page {
+  display: flex;
+  flex-direction: column;
+}
+
+#show-page span, div {
+  font-weight: 300;
+  font-size: 17px;
+}
+
+#show-page-under-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#bnb-show-title {
+  font-weight: 700 !important;
+  font-size: 36px !important;
+}
+
+#show-page-info {
+  width: 70%;
+}
+
+#show-page-booking {
+  width: 70%;
+  height: 100%;
+  background: #FF5A5F;
+}
+
 #show-page-image-container {
   display: inline-block;
   overflow: hidden;
@@ -325,6 +356,22 @@ body {
 
 #show-page-image {
   width: 100%;
+}
+
+#bnb-show-map-container {
+  height: 500px;
+  width: 100%;
+}
+
+.show-panel {
+  padding: 24px 0 24px 0;
+  border-bottom: 1px solid #e4e4e4;
+  margin-left: 40px;
+}
+
+.show-panel-title {
+  font-weight: 700;
+  padding: 0 0 15px 0;
 }
 
 

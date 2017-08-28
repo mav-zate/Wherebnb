@@ -9,24 +9,27 @@ const BnbShowOverview = ({bnb, host, address, renderStars}) => {
     <div id="show-page-overview">
       <div id="overview-summary">
         <div>
-          <span>{bnb.title}</span>
-          <span>{host.first_name}</span>
-          <br/>
-          <div>
+          <div className="show-panel">
+            <span id="bnb-show-title">
+              {bnb.title}
+            </span>
+            <span>{host.first_name}</span>
+            <br/>
             <div>
-              <span>{address.neighborhood}, </span>
-              <span>{address.city}, </span>
-              <span>{address.country}</span>
-            </div>
-            <div>
-              {renderStars(bnb.reviews)} reviews
+              <div>
+                <span>{address.neighborhood}, </span>
+                <span>{address.city}, </span>
+                <span>{address.country}</span>
+              </div>
+              <div>
+                {renderStars(bnb.reviews)} reviews
+              </div>
             </div>
           </div>
 
-          <br/>
 
-          <div>
-            <div>
+          <div className="show-panel">
+            <div className="show-panel-title">
               The space
             </div>
             <div>
@@ -43,10 +46,8 @@ const BnbShowOverview = ({bnb, host, address, renderStars}) => {
             </div>
           </div>
 
-          <br/>
-
-          <div>
-            <div>
+          <div className="show-panel">
+            <div className="show-panel-title">
               Amenities
             </div>
             <div>
@@ -72,10 +73,10 @@ const BnbShowOverview = ({bnb, host, address, renderStars}) => {
             </div>
           </div>
 
-          <br/>
-
-          <div>
-            Prices
+          <div className="show-panel">
+            <div className="show-panel-title">
+              Prices
+            </div>
             <div>
               Weekly Discount: {Math.floor(bnb.weekly_discount * 100)}%
             </div>
@@ -87,10 +88,10 @@ const BnbShowOverview = ({bnb, host, address, renderStars}) => {
             </div>
           </div>
 
-          <br/>
-
-          <div>
-            Availability
+          <div className="show-panel">
+            <div className="show-panel-title">
+              Availability
+            </div>
             <div>
               Placeholder text
             </div>

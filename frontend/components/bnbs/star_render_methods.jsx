@@ -4,10 +4,6 @@ const BLUE_STAR = "https://s3.amazonaws.com/wherebnb-devo/bnbs/static_images/blu
 const GREY_STAR = "https://s3.amazonaws.com/wherebnb-devo/bnbs/static_images/grey_star.png";
 
 export const renderStars = (reviews) => {
-  if (reviews === undefined) {
-    return;
-  }
-  
   if (reviews.length === 0) {
     return <span id="Index-unreviewedBnb">NEW</span>;
   } else {

@@ -4,7 +4,7 @@ import SessionModal from './session_form/session_modal';
 import SearchContainer from './search/search_container';
 import { AuthRoute } from '../util/route_util';
 import { Route } from 'react-router-dom';
-import BnbShowContainer from './bnbs/bnb_show_container';
+import BnbShowContainer from './bnbs/show/bnb_show_container';
 
 const App = () => (
   <div>

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BnbShow from './bnb_show';
-import { requestSingleBnb } from '../../actions/bnb_actions';
+import { requestSingleBnb } from '../../../actions/bnb_actions';
 
 
 const mapStateToProps = ({bnbs}) => {

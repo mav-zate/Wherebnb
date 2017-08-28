@@ -1,5 +1,5 @@
 import React from 'react';
-import BnbIndex from '../bnbs/bnb_index';
+import BnbIndex from '../bnbs/index/bnb_index';
 import BnbMap from '../map/bnb_map';
 
 const Search = ({bnbs, requestAllBnbs, updateFilter}) => {

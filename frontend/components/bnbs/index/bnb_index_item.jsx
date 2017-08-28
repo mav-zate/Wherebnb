@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderStars, calculateRating } from './star_render_methods';
+import { renderStars, calculateRating } from '../star_render_methods';
 
 class BnbIndexItem extends React.Component {
   constructor(props) {

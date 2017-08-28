@@ -314,11 +314,18 @@ body {
   font-weight: 700;
 }
 
-/*.angular-google-map,
-.angular-google-map-container {
-  width: 40%;
-  height: 100%;
-}*/
+/* BNB SHOW PAGE */
+
+#show-page-image-container {
+  display: inline-block;
+  overflow: hidden;
+  height: 400px;
+  width: 100%;
+}
+
+#show-page-image {
+  width: 100%;
+}
 
 
 /*Link color: #008489*/

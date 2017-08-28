@@ -9,9 +9,7 @@ const BnbsReducer = (state = {}, action) => {
       newState = action.bnbs;
       return newState;
     case RECEIVE_SINGLE_BNB:
-      debugger
       newState = Object.assign({}, state, action.bnb);
-      debugger
       return newState;
     default:
     return state;

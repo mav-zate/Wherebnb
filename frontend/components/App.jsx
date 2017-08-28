@@ -14,7 +14,7 @@ const App = () => (
     </header>
 
 
-    <Route path="/" component={SearchContainer} />
+    <Route exact path="/" component={SearchContainer} />
     <AuthRoute path="/login" component={SessionModal} />
     <AuthRoute path="/signup" component={SessionModal} />
     <Route path="/bnbs/:bnbId" component={BnbShowContainer} />

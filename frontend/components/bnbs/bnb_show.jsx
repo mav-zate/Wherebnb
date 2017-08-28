@@ -1,7 +1,9 @@
 import React from 'react';
 import { fetchBnbAddress } from '../../util/bnb_api_util';
+import { renderStars, calculateRating } from './star_render_methods';
 
 const GOOGLE_KEY = "AIzaSyBG7ngjQtl2whDLcHAzer_CA9OMk9UF8wg";
+
 
 class BnbShow extends React.Component {
   constructor(props) {
@@ -14,6 +16,8 @@ class BnbShow extends React.Component {
       },
     };
     this.fetchAddress = this.fetchAddress.bind(this);
+    this.renderStars = renderStars;
+    this.calculateRating = calculateRating;
   }
 
   componentDidMount() {
@@ -21,7 +25,6 @@ class BnbShow extends React.Component {
     this.props.requestSingleBnb(this.bnbId).then(bnb => {
       this.fetchAddress(this.props.bnbs[this.bnbId].lat, this.props.bnbs[this.bnbId].lng);
     });
-
   }
 
   fetchAddress(lat, lng) {
@@ -78,10 +81,11 @@ class BnbShow extends React.Component {
               <span>{host.first_name}</span>
               <br/>
               <div>
-                <span>{this.state.address.neighborhood}</span>
-                <span>{this.state.address.city}</span>
+                <span>{this.state.address.neighborhood}, </span>
+                <span>{this.state.address.city}, </span>
                 <span>{this.state.address.country}</span>
                 <p>pls show</p>
+                {this.renderStars(bnb.reviews)}
               </div>
             </div>
           </div>

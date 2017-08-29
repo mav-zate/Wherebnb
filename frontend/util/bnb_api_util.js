@@ -6,7 +6,6 @@ export const fetchAllBnbs = (data) => {
   });
 };
 
-
 export const fetchSingleBnb = (bnbId) => {
   return $.ajax({
     method: 'GET',
@@ -20,3 +19,5 @@ export const fetchBnbAddress = (lat, lng, key) => {
     url: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${key}`,
   });
 };
+
+// export const 

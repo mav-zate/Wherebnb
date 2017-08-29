@@ -7,7 +7,7 @@ class BnbMap extends React.Component {
   componentDidMount() {
     const mapOptions = {
       center: { lat: 40.745234, lng: -73.994006 },
-      zoom: 16,
+      zoom: 13  ,
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);

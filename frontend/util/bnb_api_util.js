@@ -20,4 +20,4 @@ export const fetchBnbAddress = (lat, lng, key) => {
   });
 };
 
-// export const 
+// export const

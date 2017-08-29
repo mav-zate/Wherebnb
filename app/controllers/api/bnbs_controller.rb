@@ -2,7 +2,7 @@ class Api::BnbsController < ApplicationController
   def index
     @bnbs = bounds ? Bnb.in_bounds(params[:bounds]) : Bnb.all
 
-    if params[:min_price] && params[:max_price]
+    if params[:priceRange][:min] && params[:priceRange][:max]
       @bnbs = @bnbs.where(price: price_range)
     end
 
@@ -18,7 +18,7 @@ class Api::BnbsController < ApplicationController
   private
 
   def price_range
-    (params[:min_price]..params[:max_price])
+    (params[:priceRange][:min]..params[:priceRange][:max])
   end
 
   def bounds

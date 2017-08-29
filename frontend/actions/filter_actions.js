@@ -1,12 +1,13 @@
 import { requestAllBnbs } from './bnb_actions';
 
-export const UPDATE_BOUNDS = 'UPDATE_BOUNDS';
+
+export const UPDATE_FILTER = 'UPDATE_FILTER';
 
 
 // action creators
 export const changeFilter = (filter, value) => {
   return {
-    type: UPDATE_BOUNDS,
+    type: UPDATE_FILTER,
     filter,
     value,
   };

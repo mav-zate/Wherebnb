@@ -86,7 +86,7 @@ class PriceFilterForm extends React.Component {
                     onChange={this.update('minPrice')}/>
               </div>
               <div className="filter-modal-div-price">
-                <label> Max price: </label>
+                <label> Max price:</label>
                   <input
                     type="number"
                     min="10"

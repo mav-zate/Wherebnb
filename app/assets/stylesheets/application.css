@@ -75,6 +75,9 @@ div, span, p, h1, h2, h3 {
   font-weight: normal;
 }
 
+#wherebnb-logo {
+  padding: 15px 0 0 24px;
+}
 
 #app-header {
   display: flex;
@@ -478,7 +481,7 @@ body {
 }
 
 .filter-modal-div-price input {
-  width: 50%;
+  width: 70%;
 }
 /*Link color: #008489*/
 

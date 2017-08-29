@@ -1,4 +1,30 @@
 import React from 'react';
+import Modal from 'react-modal'
+
+
+const CANCEL_ICON = "https://s3.amazonaws.com/wherebnb-devo/bnbs/static_images/cancel_icon.png";
+
+const customStyles = {
+  content : {
+    top                   : '0',
+    left                  : '0',
+    right                 : '0',
+    bottom                : '0',
+    marginTop             : '135px',
+    marginBottom          : '0',
+    marginLeft            : '0',
+    marginRight           : '0',
+    background            : '000',
+    overflow              : 'visible',
+    borderRadius          : '0',
+    border                : 'none',
+    width                 : '400px',
+    height                : '220px',
+  },
+  overlay: {
+    backgroundColor       : 'rgba(255, 255, 255, 0.5)',
+  }
+};
 
 
 class RoomTypeFilterForm extends React.Component {
@@ -12,11 +38,13 @@ class RoomTypeFilterForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.evaluateCheckBoxes = this.evaluateCheckBoxes.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.evaluateCheckBoxes();
+    this.toggleModal();
   }
 
   evaluateCheckBoxes() {
@@ -47,42 +75,66 @@ class RoomTypeFilterForm extends React.Component {
     };
   }
 
+  toggleModal() {
+    this.setState({ modalIsOpen: !this.state.modalIsOpen, });
+  }
+
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            <input
-              id="is-entire-home-checked"
-              type="checkbox"
-              onChange={this.update('entireHome')}
-              value="true"
-              />
-              Entire home
-          </label>
-          <br/>
-          <label>
-            <input
-              id="is-private-room-checked"
-              type="checkbox"
-              onChange={this.update('privateRoom')}
-              value="true"/>
-            Private room
-          </label>
-          <br/>
-          <label>
-            <input
-              id="is-shared-home-checked"
-              type="checkbox"
-              onChange={this.update('sharedRoom')}
-              value="true"/>
-            Shared room
-          </label>
-          <br/>
-          <input
-            type="submit"
-            value="Apply"/>
-        </form>
+        <button onClick={this.toggleModal}>Room Type</button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.toggleModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+          >
+          <div className="filter-modal">
+            <form onSubmit={this.handleSubmit}>
+              <div className="filter-modal-div">
+                <label>
+                  <input
+                    id="is-entire-home-checked"
+                    type="checkbox"
+                    onChange={this.update('entireHome')}
+                    value="true"
+                    />
+                  Entire home
+                </label>
+              </div>
+              <div className="filter-modal-div">
+                <label>
+                  <input
+                    id="is-private-room-checked"
+                    type="checkbox"
+                    onChange={this.update('privateRoom')}
+                    value="true"/>
+                  Private room
+                </label>
+              </div>
+              <div className="filter-modal-div">
+                <label>
+                  <input
+                    id="is-shared-home-checked"
+                    type="checkbox"
+                    onChange={this.update('sharedRoom')}
+                    value="true"/>
+                  Shared room
+                </label>
+              </div>
+              <div className="filter-modal-div-bottom">
+                <span onClick={this.toggleModal}>
+                  Cancel
+                </span>
+                <input
+                  className="filter-modal-submit"
+                  type="submit"
+                  value="Apply"/>
+              </div>
+            </form>
+          </div>
+        </Modal>
       </div>
     );
   }

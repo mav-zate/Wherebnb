@@ -6,6 +6,8 @@ import { AuthRoute } from '../util/route_util';
 import { Route } from 'react-router-dom';
 import BnbShowContainer from './bnbs/show/bnb_show_container';
 
+
+
 const App = () => (
   <div>
     <header id="app-header">

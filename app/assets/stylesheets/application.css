@@ -103,6 +103,10 @@ div, span, p, h1, h2, h3 {
   padding: 0px 16px 0 16px;
 }
 
+.greeting > button:focus {
+  outline: 0;
+}
+
 .auth-button > a {
   text-decoration: none;
   padding: 0px 0px 8px 0px;
@@ -131,6 +135,10 @@ body {
   border-bottom: 2px solid #767676;
 }
 
+.inner-auth:focus {
+  outline: 0;
+}
+
 .auth-button {
   height: 30%;
   border: none;
@@ -138,6 +146,10 @@ body {
   height: 100%;
   text-decoration: none;
   font-size: 14px;
+}
+
+.auth-button:focus {
+  outline: 0;
 }
 
 .ReactModal__Body--open {
@@ -385,7 +397,89 @@ body {
   padding: 0 0 15px 0;
 }
 
+/* Filter Component */
 
+#filters-container {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 0 0 16px;
+}
+
+#filters-container button {
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 0 8px;
+  font-size: 15px;
+  color: #767676;
+  height: 30px;
+}
+
+#filters-container button:hover {
+  background-color: #F2F2F2;
+  cursor: pointer;
+}
+
+#filters-container :focus {
+  outline: 0;
+}
+
+.filter-modal {
+  background: white;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 36px 2px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+}
+
+.filter-modal-div {
+  margin: 20px 0;
+}
+
+.filter-modal-div-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.filter-modal-div-bottom span {
+  padding: 0 0 4px 0;
+  font-size: 15px;
+}
+
+.filter-modal-div-bottom span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.filter-modal-div-bottom div {
+  height: 100%;
+}
+
+.filter-modal-submit {
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 0 8px;
+  font-size: 15px;
+  color: #008489;
+  height: 30px;
+}
+
+.filter-modal-submit:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.filter-modal-div-price {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.filter-modal-div-price input {
+  width: 50%;
+}
 /*Link color: #008489*/
 
 /*grey link color: #484848*/
@@ -393,3 +487,5 @@ body {
 /* grey star color: #D8D8D8*/
 
 /* logo color: #FF5A5F*/
+
+/* filter  hover color: #F2F2F2*/

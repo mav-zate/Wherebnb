@@ -40,10 +40,8 @@ class RoomTypeFilterForm extends React.Component {
   update(type) {
     return (e) => {
       if (e.target.checked) {
-        console.log('true');
         this.setState({[type]: true});
       } else {
-        console.log('false');
         this.setState({[type]: false});
       }
     };

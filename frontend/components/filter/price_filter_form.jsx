@@ -5,8 +5,8 @@ class PriceFilterForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      min: 10,
-      max: 100000,
+      minPrice: 10,
+      maxPrice: 100000,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderPrice = this.renderPrice.bind(this);
@@ -23,7 +23,7 @@ class PriceFilterForm extends React.Component {
 
   update(price) {
     return e => {
-      this.setState({[price]: e.target.value});
+      this.setState({[price]: parseInt(e.target.value)});
     };
   }
 
@@ -38,7 +38,7 @@ class PriceFilterForm extends React.Component {
               min="10"
               max="10000"
               placeholder=" x | { x >= 10, x <= y }"
-              onChange={this.update('min')}/>
+              onChange={this.update('minPrice')}/>
           </label>
           <br/>
           <label> Max price:
@@ -47,7 +47,7 @@ class PriceFilterForm extends React.Component {
               min="10"
               max="10000"
               placeholder="y | { y <= 10000, y >= x}"
-              onChange={this.update('max')}/>
+              onChange={this.update('maxPrice')}/>
           </label>
           <br/>
           <input type="submit" value="Apply"/>

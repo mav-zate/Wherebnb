@@ -5,7 +5,12 @@ const defaultFilter = Object.freeze({
   priceRange: {
     minPrice: 10,
     maxPrice: 100000,
-  }
+  },
+  roomType: {
+    entireHome: true,
+    privateRoom: true,
+    sharedRoom: true,
+  },
 });
 
 

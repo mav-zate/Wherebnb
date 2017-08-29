@@ -2,8 +2,11 @@ class Bnb < ApplicationRecord
   validates :title, :host, :lat, :lng, presence: true
   validates :accomodation_count, :price, :security_deposit, presence: true
   validates :cleaning_fee, :weekly_discount, :monthly_discount, presence: true
-  validates :wifi, :internet, :kitchen, :parking, :essentials, inclusion: { in: [true, false] }
+  validates :wifi, :internet, :kitchen, :parking, :essentials,
+            inclusion: { in: [true, false] }
   validates :rating, inclusion: 1..5
+  validates :room_type, inclusion:
+            { in: ['entire_home', 'private_room', 'shared_room'] }
 
   # image validations
   has_attached_file :image, default_url: "airbnb_logo.png"
@@ -35,5 +38,4 @@ class Bnb < ApplicationRecord
       .where(["lng < ?", bounds[:northEast][:lng]])
       .where(["lng > ?", bounds[:southWest][:lng]])
   end
-
 end

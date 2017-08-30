@@ -76,7 +76,8 @@ div, span, p, h1, h2, h3 {
 }
 
 #wherebnb-logo {
-  padding: 15px 0 0 24px;
+  padding: 18px 0 0 24px;
+  height: 36px;
 }
 
 #app-header {
@@ -89,8 +90,11 @@ div, span, p, h1, h2, h3 {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-#app-header > h1 {
-  padding: 10px;
+#app-header-left-half {
+  width: 70%;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
 }
 
 .greeting {
@@ -487,10 +491,38 @@ body {
 
 /* Google map search input */
 
-#google-map-autocomplete-input {
-  width: 70%;
+#google-map-autocomplete-container {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  height: 42px;
+  margin: 14px 0 0 30px;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.08);
 }
 
+#google-map-autocomplete-input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  font-size: 15px;
+}
+
+#google-map-autocomplete-input:focus {
+  outline: 0;
+}
+
+#google-map-autocomplete-container div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2px 0 10px;
+}
+
+#google-map-autocomplete-container  img {
+  height: 15px;
+}
 
 /*Link color: #008489*/
 

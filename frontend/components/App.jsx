@@ -5,6 +5,7 @@ import SearchContainer from './search/search_container';
 import { AuthRoute } from '../util/route_util';
 import { Route } from 'react-router-dom';
 import BnbShowContainer from './bnbs/show/bnb_show_container';
+import SearchBar from './search/search_bar';
 
 const LOGO = "https://s3.amazonaws.com/wherebnb-devo/wherebnb-logo36.png";
 
@@ -12,8 +13,10 @@ const LOGO = "https://s3.amazonaws.com/wherebnb-devo/wherebnb-logo36.png";
 const App = () => (
   <div>
     <header id="app-header">
-      <img id="wherebnb-logo" src={LOGO}/>
-      <input id="google-map-autocomplete-input" type="text"/>
+      <div id="app-header-left-half">
+        <img id="wherebnb-logo" src={LOGO}/>
+        <SearchBar />
+      </div>
       <GreetingContainer />
     </header>
 

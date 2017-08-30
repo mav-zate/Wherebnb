@@ -36,6 +36,7 @@ class BnbMap extends React.Component {
     var autocomplete = new google.maps.places.Autocomplete(
       document.getElementById('google-map-autocomplete-input')
     );
+
     autocomplete.addListener('place_changed', () => {
       let place = autocomplete.getPlace();
       if (!place.geometry) {
@@ -47,7 +48,7 @@ class BnbMap extends React.Component {
         this.map.fitBounds(place.geometry.viewport);
       } else {
         this.map.setCenter(place.geometry.location);
-        this.map.setZoom(17);  // Why 17? Because it looks good.
+        this.map.setZoom(17);
       }
     });
   }

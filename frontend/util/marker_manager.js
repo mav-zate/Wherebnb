@@ -14,8 +14,8 @@ export default class MarkerManager {
     this.map = map;
     this.markers = {};
     this.createMarkerFromBnb = this.createMarkerFromBnb.bind(this);
-    this.bnbArrayToObject = this.bnbArrayToObject.bind(this);
     this.updateMarkers = this.updateMarkers.bind(this);
+    this.bnbArrayToObject = this.bnbArrayToObject.bind(this);
     this.removeMarker = this.removeMarker.bind(this);
   }
 

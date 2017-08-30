@@ -18,7 +18,7 @@ class Booking < ApplicationRecord
   def start_must_come_before_end
     return if start_date < end_date
     errors[:start_date] << 'must come before end date'
-    errors[:end] << 'must come after start date'
+    errors[:end_date] << 'must come after start date'
   end
 
   def no_booking_overlap

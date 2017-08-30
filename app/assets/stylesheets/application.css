@@ -374,6 +374,10 @@ body {
 
 #show-page-info {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 60px 0 0;
 }
 
 #show-page-booking {
@@ -598,7 +602,28 @@ body {
 
 
 #booking-form-submit-button {
+  background: #FF5A5F;
+  border-radius: 4px;
+  font-size: 17px;
+  border: none;
+  padding: 12px 24px;
+  color: white;
   width: 70%;
+}
+
+#booking-form-submit-button:focus {
+  outline: 0;
+}
+
+#booking-footer {
+  font-size: 12px !important;
+  font-weight: normal !important;
+}
+
+.booking-form-error {
+  color: red;
+  display: flex;
+  justify-content: center;
 }
 
 

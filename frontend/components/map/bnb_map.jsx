@@ -19,7 +19,7 @@ class BnbMap extends React.Component {
       const latLngBounds = this.map.getBounds();
       const northEast = {
         lat: latLngBounds.getNorthEast().lat(),
-          lng: latLngBounds.getNorthEast().lng(),
+        lng: latLngBounds.getNorthEast().lng(),
       };
       const southWest = {
         lat: latLngBounds.getSouthWest().lat(),

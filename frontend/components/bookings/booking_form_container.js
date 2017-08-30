@@ -3,10 +3,11 @@ import BookingForm from './booking_form';
 import { withRouter } from 'react-router';
 import { createBooking } from '../../actions/booking_actions';
 
-const mapStateToProps = ({ currentUser, bnbs }) => {
+const mapStateToProps = (state) => {
   return {
-    currentUser,
-    bnbs,
+    currentUser: state.session.currentUser,
+    bnbs: state.bnbs,
+    errors: state.errors,
   };
 };
 

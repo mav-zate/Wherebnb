@@ -21,7 +21,7 @@ class Bnb < ApplicationRecord
     class_name: :Booking,
     foreign_key: :bnb_id,
     primary_key: :id,
-    dependent: destroy
+    dependent: :destroy
 
   has_many :reviews,
     class_name: :Review,

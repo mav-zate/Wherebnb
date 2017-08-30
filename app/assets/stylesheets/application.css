@@ -338,10 +338,15 @@ body {
 #map-container {
   width: 35%;
   height: calc(100vh - 105px);
+  position: fixed;
 }
 
 #map-container img {
   font-weight: 700;
+}
+
+#gm-style {
+  position: fixed;
 }
 
 /* BNB SHOW PAGE */
@@ -510,8 +515,12 @@ body {
 }
 
 #google-map-autocomplete-input:focus {
-  border-bottom: 1px solid #008489;
-  outline: 0px;
+  border-bottom: 2px solid #008489;
+  outline: 0;
+}
+
+#google-map-autocomplete-input:focus {
+  outline: 0;
 }
 
 #google-map-autocomplete-container div {
@@ -527,6 +536,16 @@ body {
 
 .pac-item:hover {
   background: #9aced0;
+}
+
+.pac-container:after {
+    background-image: none !important;
+    height: 0px;
+}
+
+.pac-icon {
+  width: 0;
+  height: 0;
 }
 
 /*Link color: #008489*/

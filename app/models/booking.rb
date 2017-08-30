@@ -10,4 +10,7 @@ class Booking < ApplicationRecord
     class_name: :Bnb,
     foreign_key: :bnb_id,
     primary_key: :id
+
+  def make_booking()
+  end
 end

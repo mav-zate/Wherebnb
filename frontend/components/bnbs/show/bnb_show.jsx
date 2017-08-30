@@ -5,6 +5,8 @@ import BnbShowOverview from './bnb_show_overview';
 import BnbShowReviews from './bnb_show_reviews';
 import BnbShowHost from './bnb_show_host';
 import BnbShowNeighborhood from './bnb_show_neighborhood';
+import BookingFormContainer from '../../bookings/booking_form_container';
+
 
 
 const GOOGLE_KEY = "AIzaSyBG7ngjQtl2whDLcHAzer_CA9OMk9UF8wg";
@@ -95,7 +97,7 @@ class BnbShow extends React.Component {
                 />
             </div>
             <div id="show-page-booking">
-              <p> Bookings placeholder </p>
+              <BookingFormContainer />
             </div>
 
           </div>

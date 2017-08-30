@@ -510,7 +510,8 @@ body {
 }
 
 #google-map-autocomplete-input:focus {
-  outline: 0;
+  border-bottom: 1px solid #008489;
+  outline: 0px;
 }
 
 #google-map-autocomplete-container div {
@@ -524,6 +525,10 @@ body {
   height: 15px;
 }
 
+.pac-item:hover {
+  background: #9aced0;
+}
+
 /*Link color: #008489*/
 
 /*grey link color: #484848*/
@@ -532,4 +537,4 @@ body {
 
 /* logo color: #FF5A5F*/
 
-/* filter  hover color: #F2F2F2*/
+/* filter hover color: #F2F2F2*/

@@ -13,6 +13,7 @@ const App = () => (
   <div>
     <header id="app-header">
       <img id="wherebnb-logo" src={LOGO}/>
+      <input id="google-map-autocomplete-input" type="text"/>
       <GreetingContainer />
     </header>
 

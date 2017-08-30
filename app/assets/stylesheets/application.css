@@ -483,6 +483,15 @@ body {
 .filter-modal-div-price input {
   width: 70%;
 }
+
+
+/* Google map search input */
+
+#google-map-autocomplete-input {
+  width: 70%;
+}
+
+
 /*Link color: #008489*/
 
 /*grey link color: #484848*/

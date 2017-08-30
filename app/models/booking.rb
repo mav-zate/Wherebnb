@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   validates :booker, :bnb, :start_date, :end_date, presence: true
-  validates :start_must_come_before_end
-  validates :no_booking_overlap
+  validate :start_must_come_before_end
+  validate :no_booking_overlap
 
   belongs_to :booker,
     class_name: :User,
@@ -28,10 +28,10 @@ class Booking < ApplicationRecord
   end
 
   def overlapping_bookings
-    self
+    Booking
       .where.not(id: self.id)
       .where(bnb_id: bnb_id)
-      .where.not('start_date >= :end_date OR end_date =< :start_date',
+      .where.not('start_date >= :end_date OR end_date <= :start_date',
                  start_date: start_date, end_date: end_date)
   end
 

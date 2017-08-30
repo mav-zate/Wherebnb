@@ -8,7 +8,8 @@ import { signup, login, logout } from './actions/session_actions';
 import { fetchAllBnbs } from './util/bnb_api_util';
 import { requestAllBnbs, requestSingleBnb } from './actions/bnb_actions';
 import { selectAllBnbs } from './reducers/selectors';
-
+import { postBooking } from './util/booking_api_util';
+import { createBooking } from './actions/booking_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -32,6 +33,8 @@ window.requestAllBnbs = requestAllBnbs;
 window.selectAllBnbs = selectAllBnbs;
 window.fetchAllBnbs = fetchAllBnbs;
 window.requestSingleBnb = requestSingleBnb;
+window.postBooking = postBooking;
+window.createBooking = createBooking;
 
 // $.ajax({
 //   email: 'calvin@gmail.com',

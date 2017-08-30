@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BookingForm from './booking_form';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import { createBooking } from '../../actions/booking_actions';
 
 const mapStateToProps = (state) => {

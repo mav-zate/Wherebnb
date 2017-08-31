@@ -4,6 +4,7 @@ import SessionReducer from './session_reducer';
 import FilterReducer from './filter_reducer';
 import ErrorsReducer from './errors_reducer';
 import BookingsReducer from './bookings_reducer';
+import ReviewsReducer from './reviews_reducer';
 
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   filters: FilterReducer,
   errors: ErrorsReducer,
   bookings: BookingsReducer,
+  reviews: ReviewsReducer,
 });
 
 

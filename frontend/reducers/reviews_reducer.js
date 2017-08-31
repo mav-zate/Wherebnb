@@ -1,4 +1,4 @@
-import { RECEIVE_SINGLE_REVIEW } from '../actions/review_actions';
+import { RECEIVE_SINGLE_REVIEW, RECEIVE_BNB_REVIEWS } from '../actions/review_actions';
 
 
 const ReviewsReducer = (state = {}, action) => {
@@ -7,6 +7,9 @@ const ReviewsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_SINGLE_REVIEW:
       newState = Object.assign({}, state, action.review);
+      return newState;
+    case RECEIVE_BNB_REVIEWS:
+      newState = action.reviews;
       return newState;
     default:
       return state;

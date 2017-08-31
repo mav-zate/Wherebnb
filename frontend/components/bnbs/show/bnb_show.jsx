@@ -20,6 +20,7 @@ class BnbShow extends React.Component {
         city: '',
         country: '',
       },
+      
     };
     this.fetchAddress = this.fetchAddress.bind(this);
     this.renderStars = renderStars;
@@ -31,7 +32,9 @@ class BnbShow extends React.Component {
     this.props.requestSingleBnb(this.bnbId).then(bnb => {
       this.fetchAddress(this.props.bnbs[this.bnbId].lat, this.props.bnbs[this.bnbId].lng);
     });
+    this.props.requestBnbReviews(this.bnbId).then(reviews => console.log(reviews));
   }
+
 
   fetchAddress(lat, lng) {
     let neighborhood;
@@ -62,9 +65,12 @@ class BnbShow extends React.Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
 
+  }
 
   render() {
+
     if (this.props.bnbs[this.bnbId] !== undefined) {
       let bnb = this.props.bnbs[this.bnbId];
       let host = bnb.host;
@@ -84,7 +90,7 @@ class BnbShow extends React.Component {
                 />
 
               <BnbShowReviews
-                reviews={bnb.reviews}
+                reviews={this.props.reviews}
                 createReview={this.props.createReview}
                 bnb={bnb}
                 session={this.props.session}

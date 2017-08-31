@@ -5,3 +5,15 @@ export const postReview = (review) => {
     data: review,
   });
 };
+
+export const fetchBnbReviews = (bnbId) => {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/reviews',
+    data: {
+      review: {
+        bnb_id: bnbId,
+      }
+    }
+  });
+};

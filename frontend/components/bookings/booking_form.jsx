@@ -31,7 +31,7 @@ class BookingForm extends React.Component {
   }
 
   renderErrors() {
-    debugger
+    
     if (this.state.errors.length > 0) {
       console.log('error');
       return (

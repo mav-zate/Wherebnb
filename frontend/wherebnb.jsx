@@ -4,12 +4,12 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // test imports
-import { signup, login, logout } from './actions/session_actions';
-import { fetchAllBnbs } from './util/bnb_api_util';
-import { requestAllBnbs, requestSingleBnb } from './actions/bnb_actions';
-import { selectAllBnbs } from './reducers/selectors';
-import { postBooking } from './util/booking_api_util';
-import { createBooking } from './actions/booking_actions';
+// import { signup, login, logout } from './actions/session_actions';
+// import { fetchAllBnbs } from './util/bnb_api_util';
+// import { requestAllBnbs, requestSingleBnb } from './actions/bnb_actions';
+// import { selectAllBnbs } from './reducers/selectors';
+// import { postBooking } from './util/booking_api_util';
+// import { createBooking } from './actions/booking_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -26,15 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store}/>, root);
 });
 
-window.signup = signup;
-window.login = login;
-window.logout = logout;
-window.requestAllBnbs = requestAllBnbs;
-window.selectAllBnbs = selectAllBnbs;
-window.fetchAllBnbs = fetchAllBnbs;
-window.requestSingleBnb = requestSingleBnb;
-window.postBooking = postBooking;
-window.createBooking = createBooking;
+// window.signup = signup;
+// window.login = login;
+// window.logout = logout;
+// window.requestAllBnbs = requestAllBnbs;
+// window.selectAllBnbs = selectAllBnbs;
+// window.fetchAllBnbs = fetchAllBnbs;
+// window.requestSingleBnb = requestSingleBnb;
+// window.postBooking = postBooking;
+// window.createBooking = createBooking;
 
 // $.ajax({
 //   email: 'calvin@gmail.com',

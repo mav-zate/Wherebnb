@@ -14,4 +14,8 @@ class Review < ApplicationRecord
     foreign_key: :bnb_id,
     primary_key: :id
 
+  def self.get_by(bnb_id)
+    self
+      .where(bnb_id: bnb_id)
+  end
 end

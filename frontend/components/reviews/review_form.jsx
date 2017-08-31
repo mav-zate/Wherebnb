@@ -19,10 +19,10 @@ class ReviewForm extends React.Component {
       location: 0,
       checkIn: 0,
       value: 0,
-      rating: 0,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.setRating = this.setRating.bind(this);
   }
 
   componentDidMount() {
@@ -35,11 +35,36 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
+    const review = {
+      review: {
+        bnb_id: this.state.bnbId,
+        author_id: this.state.authorId,
+        accuracy: this.state.accuracy,
+        communication: this.state.communication,
+        cleanliness: this.state.cleanliness,
+        location: this.state.location,
+        check_in: this.state.checkIn,
+        value: this.state.value,
+        body: this.state.body,
+        rating: this.setRating(),
+      }
+    };
+    this.props.createReview(review);
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
 
+  }
+
+  setRating() {
+    let sum = this.state.accuracy;
+    sum += this.state.communication;
+    sum += this.state.cleanliness;
+    sum += this.state.location;
+    sum += this.state.checkIn;
+    sum += this.state.value;
+
+    return Math.floor(sum / 6);
   }
 
   update(key) {

@@ -10,21 +10,31 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalIsOpen: false,
     };
   }
+
+
+
 
   render() {
     if (this.props.currentUser) {
       return (
-        <div id="greeting">
-          <h1>Hello, {this.props.currentUser.first_name}</h1>
-          <button onClick={this.props.logout}>Log out!</button>
+        <div id="greeting-logged-in">
+            <button
+              className="auth-button"
+              onClick={this.props.logout}>
+                <div className="inner-auth">
+                    Log out
+                </div>
+            </button>
+            <img
+              src={this.props.currentUser.profile_pic}
+              id="current-user-image"/>
         </div>
       );
     } else {
       return (
-        <div className="greeting">
+        <div id="greeting-logged-out">
           <button className="auth-button">
             <Link to="/signup">
               <div className="inner-auth">

@@ -23,6 +23,16 @@ class SessionForm extends React.Component {
     this.welcomeMessage = this.welcomeMessage.bind(this);
     this.submitMessage = this.submitMessage.bind(this);
     this.footerMessage = this.footerMessage.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const default_user = {
+      email: "user@default.com",
+      password: 'password',
+    };
+    this.props.login(default_user);
   }
 
   handleSubmit(e) {
@@ -139,7 +149,9 @@ class SessionForm extends React.Component {
           {this.welcomeMessage(this.props.formType)}
         </div>
 
-        <p className="errors">{this.state.errors}</p>
+        <div className="session-form-errors">
+          {this.state.errors.map(err => <p>{err}</p>)}
+        </div>
         <form onSubmit={this.handleSubmit}>
 
           <div className="auth-input-container">
@@ -174,8 +186,14 @@ class SessionForm extends React.Component {
             </div>
           </div>
 
+          <button
+            className="session-form-button"
+            onClick={this.demoLogin}>
+          Demo
+          </button>
+
           <input
-            id="session-form-button"
+            className="session-form-button"
             type="submit"
             value={this.submitMessage(this.props.formType)}
             />

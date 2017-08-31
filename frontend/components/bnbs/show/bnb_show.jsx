@@ -20,7 +20,7 @@ class BnbShow extends React.Component {
         city: '',
         country: '',
       },
-      
+
     };
     this.fetchAddress = this.fetchAddress.bind(this);
     this.renderStars = renderStars;
@@ -28,11 +28,11 @@ class BnbShow extends React.Component {
   }
 
   componentDidMount() {
-    this.bnbId = parseInt(/\/bnbs\/(\d+)/.exec(this.props.match.url)[1]);
-    this.props.requestSingleBnb(this.bnbId).then(bnb => {
-      this.fetchAddress(this.props.bnbs[this.bnbId].lat, this.props.bnbs[this.bnbId].lng);
+    let bnbId = this.props.match.params.bnbId;
+    this.props.requestSingleBnb(bnbId).then(bnb => {
+      this.fetchAddress(this.props.bnbs[bnbId].lat, this.props.bnbs[bnbId].lng);
     });
-    this.props.requestBnbReviews(this.bnbId).then(reviews => console.log(reviews));
+    this.props.requestBnbReviews(bnbId)
   }
 
 
@@ -66,13 +66,15 @@ class BnbShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
+    if (this.props.match.params.bnbId !== nextProps.match.params.bnbId) {
+      this.props.requestSingleBnb(parseInt(nextProps.match.params.bnbId));
+    }
   }
 
   render() {
-
-    if (this.props.bnbs[this.bnbId] !== undefined) {
-      let bnb = this.props.bnbs[this.bnbId];
+    let bnbId = this.props.match.params.bnbId;
+    if (this.props.bnbs[bnbId] !== undefined) {
+      let bnb = this.props.bnbs[bnbId];
       let host = bnb.host;
       return (
         <div id="show-page">

@@ -8,20 +8,30 @@
 
 
 User.destroy_all
+
+default_user = User.create!(email: 'user@default.com', first_name: 'default',
+      last_name: 'user', password: 'password',
+      profile_pic: File.open('app/assets/images/default_user.png'))
+
 u1 = User.create!(email: 'edcarl@gmail.com', first_name: 'Edcarl',
-      last_name: 'Adraincem', password: 'password')
+      last_name: 'Adraincem', password: 'password',
+      profile_pic: File.open('app/assets/images/default_user.png'))
 
 u2 = User.create!(email: 'mendel@gmail.com', first_name: 'Mendel',
-      last_name: 'Konikov', password: 'password')
+      last_name: 'Konikov', password: 'password',
+      profile_pic: File.open('app/assets/images/default_user.png'))
 
 u3 = User.create!(email: 'thomas@gmail.com', first_name: 'Thomas',
-      last_name: 'Dorrian', password: 'password')
+      last_name: 'Dorrian', password: 'password',
+      profile_pic: File.open('app/assets/images/default_user.png'))
 
 u4 = User.create!(email: 'bolei@gmail.com', first_name: 'Bolei',
-      last_name: 'Zhang', password: 'password')
+      last_name: 'Zhang', password: 'password',
+      profile_pic: File.open('app/assets/images/default_user.png'))
 
 u5 = User.create!(email: 'mav@gmail.com', first_name: 'Maverick',
-      last_name: 'Alzate', password: 'password')
+      last_name: 'Alzate', password: 'password',
+      profile_pic: File.open('app/assets/images/default_user.png'))
 
 
 Bnb.destroy_all

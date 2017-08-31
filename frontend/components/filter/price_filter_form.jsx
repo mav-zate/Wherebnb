@@ -82,7 +82,7 @@ class PriceFilterForm extends React.Component {
                     type="number"
                     min="10"
                     max="10000"
-                    placeholder=" x | { x >= 10, x <= y }"
+                    placeholder="Minimum price is $10"
                     onChange={this.update('minPrice')}/>
               </div>
               <div className="filter-modal-div-price">
@@ -91,7 +91,7 @@ class PriceFilterForm extends React.Component {
                     type="number"
                     min="10"
                     max="10000"
-                    placeholder="y | { y <= 10000, y >= x}"
+                    placeholder="Go crazy!"
                     onChange={this.update('maxPrice')}/>
               </div>
               <div className="filter-modal-div-bottom">

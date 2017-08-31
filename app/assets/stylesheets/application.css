@@ -97,7 +97,7 @@ div, span, p, h1, h2, h3 {
   flex-direction: row;
 }
 
-.greeting {
+#greeting-logged-out {
   padding: 0 10px 10px 10px;
   height: 50%;
   display: flex;
@@ -105,6 +105,22 @@ div, span, p, h1, h2, h3 {
   align-items: center;
 
 }
+
+#greeting-logged-in {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 10px 10px 10px;
+  height: 50%;
+  position: relative;
+}
+
+#current-user-image {
+  width: 36px;
+  height: 36px;
+  padding: 20px 20px 0 20px;
+}
+
 
 .greeting > button {
   padding: 0px 16px 0 16px;
@@ -153,6 +169,7 @@ body {
   height: 100%;
   text-decoration: none;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .auth-button:focus {
@@ -160,7 +177,7 @@ body {
 }
 
 .ReactModal__Body--open {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 
@@ -177,7 +194,7 @@ body {
 }
 
 #session-form {
-  height: 80%;
+  height: 90%;
   width: 100%;
   background: white;
   opacity: 1;
@@ -212,6 +229,10 @@ body {
   border-color: #e4e4e4;
 }
 
+.auth-input:focus {
+  outline: 0;
+}
+
 .auth-input-icon {
   width: 14%;
   height: 44px;
@@ -225,14 +246,31 @@ body {
   padding-left: 0;
 }
 
-#session-form-button {
+.session-form-button {
   background: #FF5A5F;
   border-radius: 4px;
   font-size: 17px;
   border: none;
   padding: 12px 24px;
+  margin: 10px 0 10px 0;
   color: white;
   width: 100%;
+}
+
+.session-form-errors {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.session-form-errors > p {
+  color: red;
+  display: flex;
+  justify-content: center;
+}
+
+#session-form-button:focus {
+  outline: 0;
 }
 
 #session-form-footer {
@@ -252,6 +290,16 @@ body {
   color: #008489;
 }
 
+
+.session-button-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
 
 /**************** SEARCH CONTAINER **************/
 
@@ -278,7 +326,6 @@ body {
 #index-allItems {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
 }
 
 .indexItem {

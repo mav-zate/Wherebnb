@@ -7,6 +7,7 @@ class BnbIndexItem extends React.Component {
     super(props);
     this.renderStars = renderStars.bind(this);
     this.renderBeds = this.renderBeds.bind(this);
+    this.renderRoomType = this.renderRoomType.bind(this);
   }
 
 
@@ -14,6 +15,16 @@ class BnbIndexItem extends React.Component {
     return bedCount > 1 ? `${bedCount} beds` : `1 bed`;
   }
 
+  renderRoomType() {
+    let roomType = this.props.bnb.room_type;
+    if (roomType === 'entire_home') {
+      return 'Entire home';
+    } else if (roomType === 'private_room') {
+      return 'Private room';
+    } else if (roomType === 'shared_room') {
+      return 'Shared room';
+    }
+  }
 
   render() {
     return (
@@ -31,7 +42,7 @@ class BnbIndexItem extends React.Component {
             <span>{this.props.bnb.title}</span>
           </div>
           <div className="indexItem-midRow">
-            <span>{this.props.bnb.room_type}</span>
+            <span>{this.renderRoomType()}</span>
             <span>·</span>
             <span>{this.renderBeds(this.props.bnb.bed_count)}</span>
           </div>

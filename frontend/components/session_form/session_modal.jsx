@@ -59,7 +59,6 @@ class SessionModal extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Example Modal"
-          id=""
         >
         <div id="session-form-parent">
           <img

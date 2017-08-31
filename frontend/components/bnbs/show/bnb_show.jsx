@@ -8,7 +8,6 @@ import BnbShowNeighborhood from './bnb_show_neighborhood';
 import BookingFormContainer from '../../bookings/booking_form_container';
 
 
-
 const GOOGLE_KEY = "AIzaSyBG7ngjQtl2whDLcHAzer_CA9OMk9UF8wg";
 
 
@@ -86,7 +85,11 @@ class BnbShow extends React.Component {
 
               <BnbShowReviews
                 reviews={bnb.reviews}
+                createReview={this.props.createReview}
+                bnb={bnb}
+                session={this.props.session}
                 />
+
 
               <BnbShowHost
                 host={host}

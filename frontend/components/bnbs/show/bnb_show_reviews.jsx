@@ -1,7 +1,8 @@
 import React from 'react';
+import ReviewForm from '../../reviews/review_form';
 
 
-const BnbShowReviews = ({reviews}) => {
+const BnbShowReviews = ({reviews, createReview, bnb, session}) => {
   return (
     <div className="show-panel">
       <div className="show-panel-title">
@@ -12,6 +13,10 @@ const BnbShowReviews = ({reviews}) => {
           {rev.body}
         </li>
       ))}
+      <ReviewForm
+        createReview={createReview}
+        bnb={bnb}
+        session={session}/>
     </div>
   );
 };

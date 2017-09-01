@@ -677,6 +677,25 @@ body {
   justify-content: center;
 }
 
+/* SPLASH PAGE */
+
+#splash-page {
+  display: flex;
+  justify-content: center;
+  margin: 10% 20%;
+}
+
+#splash-page-title {
+  color: #FF5A5F;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+#splash-page-subtitle {
+  color: #484848;
+  font-size: 48px;
+  font-weight: 300;
+}
 
 
 /*Link color: #008489*/

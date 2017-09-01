@@ -6,7 +6,7 @@ import { AuthRoute } from '../util/route_util';
 import { Route, Link } from 'react-router-dom';
 import BnbShowContainer from './bnbs/show/bnb_show_container';
 import SearchBar from './search/search_bar';
-import SplashPage from '';
+import SplashPage from './splash_page/splash_page';
 
 const LOGO = "https://s3.amazonaws.com/wherebnb-devo/wherebnb-logo36.png";
 
@@ -25,8 +25,8 @@ const App = () => (
       <GreetingContainer />
     </header>
 
-    <Route path="/" component={SplashPage}/>
-    <Route path="/bnbs" component={SearchContainer} />
+    <Route exact path="/" component={SplashPage}/>
+    <Route exact path="/bnbs" component={SearchContainer} />
     <AuthRoute path="/login" component={SessionModal} />
     <AuthRoute path="/signup" component={SessionModal} />
     <Route path="/bnbs/:bnbId" component={BnbShowContainer} />

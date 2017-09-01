@@ -13,12 +13,16 @@ class Booking < ApplicationRecord
     foreign_key: :bnb_id,
     primary_key: :id
 
+  def self.get_by(bnb_id)
+    self
+      .where(bnb_id: bnb_id)
+  end
+
   private
 
   def start_must_come_before_end
-    return if start_date < end_date
+    return if start_date <= end_date
     errors[:start_date] << 'must come before end date'
-    errors[:end_date] << 'must come after start date'
   end
 
   def no_booking_overlap
@@ -31,7 +35,7 @@ class Booking < ApplicationRecord
     Booking
       .where.not(id: self.id)
       .where(bnb_id: bnb_id)
-      .where.not('start_date >= :end_date OR end_date <= :start_date',
+      .where.not('start_date > :end_date OR end_date < :start_date',
                  start_date: start_date, end_date: end_date)
   end
 

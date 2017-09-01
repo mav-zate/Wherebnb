@@ -135,13 +135,9 @@ class SessionForm extends React.Component {
   }
 
 
-  // renderErrors() {
-  //  add method here that renders proper error message
-  // }
-
   render() {
     if (this.props.loggedIn) {
-      return <Redirect to="/"/>;
+      return <Redirect to="/bnbs"/>;
     }
     return(
       <div id="session-form">
@@ -149,7 +145,7 @@ class SessionForm extends React.Component {
           {this.welcomeMessage(this.props.formType)}
         </div>
 
-        <div className="session-form-errors">
+        <div className="errors">
           {this.state.errors.map(err => <p>{err}</p>)}
         </div>
         <form onSubmit={this.handleSubmit}>

@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
     currentUser: state.session.currentUser,
     bnbs: state.bnbs,
     errors: state.errors,
+    bookings: state.bookings,
   };
 };
 

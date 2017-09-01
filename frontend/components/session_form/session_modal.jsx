@@ -47,7 +47,7 @@ class SessionModal extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
-    this.props.history.push('/');
+    // this.props.history.push('/');
   }
 
 

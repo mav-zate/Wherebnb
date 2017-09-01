@@ -1,9 +1,15 @@
 class Api::BookingsController < ApplicationController
+  def index
+    @bookings = Booking.get_by(bnb_id)
+
+    render :index
+  end
+
   def create
     @booking = Booking.new(booking_params)
 
     if @booking.save
-      render json: {success: 'Your booking was made succesfully'}
+      render :show
     else
       render json: @booking.errors.full_messages, status: 422
     end

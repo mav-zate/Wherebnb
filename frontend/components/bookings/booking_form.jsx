@@ -8,6 +8,7 @@ class BookingForm extends React.Component {
       startDate: '',
       endDate: '',
       errors: [],
+      booking: {},
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -15,11 +16,15 @@ class BookingForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({errors: nextProps.errors});
+    this.setState({
+      errors: nextProps.errors,
+      booking: nextProps.bookings,
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({ errors: []});
     this.props.createBooking({
       booking: {
         start_date: this.state.startDate,
@@ -31,7 +36,6 @@ class BookingForm extends React.Component {
   }
 
   renderErrors() {
-    
     if (this.state.errors.length > 0) {
       console.log('error');
       return (
@@ -93,15 +97,25 @@ class BookingForm extends React.Component {
             </div>
           </div>
           <div className="booking-row">
-            <input
-              id="booking-form-submit-button"
-              type="submit"
-              value="Book"/>
+            {(Object.keys(this.state.booking).length === 0) ?
+              <input
+                id="booking-form-submit-button"
+                type="submit"
+                value="Book"/>
+                :
+                <p
+                  id="booking-success-message">
+                  Your booking has been made succesfully!
+                </p>
+            }
           </div>
           <div className="booking-row-">
-            {this.state.errors.map(err =>
+            {(Object.keys(this.state.booking).length === 0) ?
+              this.state.errors.map(err =>
               (<span className="booking-form-error">{err}</span>)
-            )}
+            ) : null
+            }
+
           </div>
           <div className="booking-row">
             <span id="booking-footer">

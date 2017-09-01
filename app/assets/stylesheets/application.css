@@ -257,13 +257,13 @@ body {
   width: 100%;
 }
 
-.session-form-errors {
+.errors {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.session-form-errors > p {
+.errors > p {
   color: red;
   display: flex;
   justify-content: center;
@@ -647,6 +647,10 @@ body {
   padding: 12px;
 }
 
+#booking-success-message {
+  color: #008489;
+}
+
 
 #booking-form-submit-button {
   background: #FF5A5F;
@@ -676,6 +680,7 @@ body {
 
 
 /*Link color: #008489*/
+
 
 /*grey link color: #484848*/
 

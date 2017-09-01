@@ -34,6 +34,7 @@ class PriceFilterForm extends React.Component {
       minPrice: 10,
       maxPrice: 100000,
       modalIsOpen: false,
+      errors: [],
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderPrice = this.renderPrice.bind(this);
@@ -42,11 +43,17 @@ class PriceFilterForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.toggleModal();
-    this.props.updateFilter('priceRange', {
-      minPrice: this.state.minPrice,
-      maxPrice: this.state.maxPrice,
-    });
+    if (this.state.minPrice > this.state.maxPrice) {
+      this.setState({errors: ['Min price must be less than max price']});
+      return;
+    } else {
+      this.toggleModal();
+      this.setState({errors: []});
+      this.props.updateFilter('priceRange', {
+        minPrice: this.state.minPrice,
+        maxPrice: this.state.maxPrice,
+      });
+    }
   }
 
   renderPrice(value) {
@@ -76,6 +83,11 @@ class PriceFilterForm extends React.Component {
           >
           <div className="filter-modal">
             <form onSubmit={this.handleSubmit}>
+              <div className="errors">
+                {
+                  this.state.errors.map(err => <p>{err}</p>)
+                }
+              </div>
               <div className="filter-modal-div-price">
                 <label> Min price:</label>
                   <input

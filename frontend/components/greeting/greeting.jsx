@@ -13,13 +13,18 @@ class Greeting extends React.Component {
     };
   }
 
-
-
-
   render() {
     if (this.props.currentUser) {
       return (
         <div id="greeting-logged-in">
+            <button
+              className="auth-button">
+              <Link to="/bnbs">
+                <div className="inner-auth">
+                    Search
+                </div>
+              </Link>
+            </button>
             <button
               className="auth-button"
               onClick={this.props.logout}>

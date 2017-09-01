@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from 'react-modal'
+import Modal from 'react-modal';
 
 
 const CANCEL_ICON = "https://s3.amazonaws.com/wherebnb-devo/bnbs/static_images/cancel_icon.png";
@@ -49,20 +49,32 @@ class RoomTypeFilterForm extends React.Component {
 
   evaluateCheckBoxes() {
     let falseValues = {};
+    let falseCount = 0;
     if (!document.getElementById('is-entire-home-checked').checked) {
       falseValues.entireHome = false;
+      falseCount++;
     }
     if (!document.getElementById('is-private-room-checked').checked) {
       falseValues.privateRoom = false;
+      falseCount++;
     }
     if (!document.getElementById('is-shared-home-checked').checked) {
       falseValues.sharedRoom = false;
+      falseCount++;
     }
-    this.setState({
-      entireHome: (falseValues.entireHome === undefined) ? true : false,
-      privateRoom: (falseValues.privateRoom === undefined) ? true : false,
-      sharedRoom: (falseValues.sharedRoom === undefined) ? true : false,
-    }, () => this.props.updateFilter('roomType', this.state));
+    if (falseCount < 3) {
+      this.setState({
+        entireHome: (falseValues.entireHome === undefined) ? true : false,
+        privateRoom: (falseValues.privateRoom === undefined) ? true : false,
+        sharedRoom: (falseValues.sharedRoom === undefined) ? true : false,
+      }, () => this.props.updateFilter('roomType', this.state));
+    } else {
+      this.setState({
+        entireHome: true,
+        privateRoom: true,
+        sharedRoom: true,
+      }, () => this.props.updateFilter('roomType', this.state));
+    }
   }
 
   update(type) {
@@ -98,7 +110,7 @@ class RoomTypeFilterForm extends React.Component {
                     id="is-entire-home-checked"
                     type="checkbox"
                     onChange={this.update('entireHome')}
-                    value="true"
+                    value="true" 
                     />
                   Entire home
                 </label>

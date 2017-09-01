@@ -24,9 +24,8 @@ export const receiveBookingErrors = errors => {
 
 // action thunk creators
 export const createBooking = (booking) => (dispatch) => {
-  APIUtil.postBooking(booking).then(data => console.log(data)
-    // savedBooking => {
-    // dispatch(receiveSingleBooking(savedBooking));
-    // return savedBooking;
-  ).fail(err => dispatch(receiveBookingErrors(err.responseJSON)));
+  APIUtil.postBooking(booking).then(savedBooking => {
+    dispatch(receiveSingleBooking(savedBooking));
+    return savedBooking;
+  }).fail(err => dispatch(receiveBookingErrors(err.responseJSON)));
 };

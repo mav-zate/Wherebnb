@@ -697,6 +697,21 @@ body {
   font-weight: 300;
 }
 
+#bnb-show-host-pic {
+  width: 50px;
+  height: 50px;
+}
+
+#review-input {
+  width: 50%;
+}
+
+.review-form-line {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
 
 /*Link color: #008489*/
 

@@ -24,6 +24,7 @@ class BnbShowReviews extends React.Component {
             {rev.body}
           </li>
         ))}
+      <br/>
         <ReviewForm
           createReview={createReview}
           bnb={bnb}

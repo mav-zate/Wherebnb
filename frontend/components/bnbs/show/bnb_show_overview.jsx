@@ -13,7 +13,6 @@ const BnbShowOverview = ({bnb, host, address, renderStars}) => {
             <span id="bnb-show-title">
               {bnb.title}
             </span>
-            <span>{host.first_name}</span>
             <br/>
             <div>
               <div>
@@ -24,6 +23,13 @@ const BnbShowOverview = ({bnb, host, address, renderStars}) => {
               <div>
                 {renderStars(bnb.reviews)} reviews
               </div>
+
+            </div>
+          </div>
+
+          <div className="show-panel">
+            <div>
+              {bnb.general_description}
             </div>
           </div>
 
@@ -91,9 +97,6 @@ const BnbShowOverview = ({bnb, host, address, renderStars}) => {
           <div className="show-panel">
             <div className="show-panel-title">
               Availability
-            </div>
-            <div>
-              Placeholder text
             </div>
             <div>
               link to calender of availabilities

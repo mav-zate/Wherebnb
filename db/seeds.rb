@@ -13,24 +13,24 @@ default_user = User.create!(email: 'user@default.com', first_name: 'default',
       last_name: 'user', password: 'password',
       profile_pic: File.open('app/assets/images/default_user.png'))
 
-u1 = User.create!(email: 'edcarl@gmail.com', first_name: 'Edcarl',
-      last_name: 'Adraincem', password: 'password',
+u1 = User.create!(email: 'edcarl@gmail.com', first_name: 'Araz',
+      last_name: 'Aslanian', password: 'password',
       profile_pic: File.open('app/assets/images/default_user.png'))
 
-u2 = User.create!(email: 'mendel@gmail.com', first_name: 'Mendel',
-      last_name: 'Konikov', password: 'password',
+u2 = User.create!(email: 'mendel@gmail.com', first_name: 'Maulik',
+      last_name: 'Patel', password: 'password',
       profile_pic: File.open('app/assets/images/default_user.png'))
 
-u3 = User.create!(email: 'thomas@gmail.com', first_name: 'Thomas',
-      last_name: 'Dorrian', password: 'password',
+u3 = User.create!(email: 'thomas@gmail.com', first_name: 'Hassan',
+      last_name: 'AbdulKhaleq', password: 'password',
       profile_pic: File.open('app/assets/images/default_user.png'))
 
-u4 = User.create!(email: 'bolei@gmail.com', first_name: 'Bolei',
-      last_name: 'Zhang', password: 'password',
+u4 = User.create!(email: 'bolei@gmail.com', first_name: 'Danny',
+      last_name: 'Wen', password: 'password',
       profile_pic: File.open('app/assets/images/default_user.png'))
 
-u5 = User.create!(email: 'mav@gmail.com', first_name: 'Maverick',
-      last_name: 'Alzate', password: 'password',
+u5 = User.create!(email: 'mav@gmail.com', first_name: 'Ethan',
+      last_name: "O'Sullivan", password: 'password',
       profile_pic: File.open('app/assets/images/default_user.png'))
 
 
@@ -41,7 +41,8 @@ bnb1 = Bnb.create!(title: 'Penthouse condo', host_id: u1.id, lat: 40.745152,
         monthly_discount: 0.23, wifi: true, internet: true, kitchen: true,
         parking: false, essentials: false, pets_allowed: false,
         smoking_allowed: false, rating: 5, bed_count: 1, room_type: 'entire_home',
-        home_type: 'condo', image: File.open('app/assets/images/greek_villa.jpg'))
+        home_type: 'condo', image: File.open('app/assets/images/greek_villa.jpg'),
+        general_description: 'description')
 
 bnb2 = Bnb.create!(title: 'Cozy apartment', host_id: u2.id, lat: 31.993618,
         lng: 35.841555,
@@ -49,7 +50,8 @@ bnb2 = Bnb.create!(title: 'Cozy apartment', host_id: u2.id, lat: 31.993618,
         cleaning_fee: 43, weekly_discount: 0.43, monthly_discount: 0.74, wifi: true,
         internet: true, kitchen: true, parking: true, essentials: true, pets_allowed: true,
         smoking_allowed: true, rating: 3, bed_count: 2, room_type: 'private_room',
-        home_type: 'apartment', image: File.open('app/assets/images/lakeside_apartment.jpg'))
+        home_type: 'apartment', image: File.open('app/assets/images/lakeside_apartment.jpg'),
+        general_description: 'description')
 
 bnb3 = Bnb.create!(title: 'Seaside Villa', host_id: u3.id, lat: 24.483404,
         lng: 54.360520,
@@ -58,7 +60,8 @@ bnb3 = Bnb.create!(title: 'Seaside Villa', host_id: u3.id, lat: 24.483404,
         wifi: true, internet: true, kitchen: true, parking: true,
         essentials: true, pets_allowed: true, smoking_allowed: true,
         rating: 4, bed_count: 3, room_type: 'private_room',
-        home_type: 'Villa', image: File.open('app/assets/images/moroccan_home.jpg'))
+        home_type: 'Villa', image: File.open('app/assets/images/moroccan_home.jpg'),
+        general_description: 'description')
 
 bnb4 = Bnb.create!(title: 'Cozy cottage', host_id: u4.id, lat: 31.792852,
         lng: 35.245915,
@@ -66,7 +69,8 @@ bnb4 = Bnb.create!(title: 'Cozy cottage', host_id: u4.id, lat: 31.792852,
         cleaning_fee: 45, weekly_discount: 0.45, monthly_discount: 0.45, wifi: true,
         internet: true, kitchen: true, parking: true, essentials: true, pets_allowed: true,
         smoking_allowed: true, rating: 2, bed_count: 5, room_type: 'shared_room',
-        home_type: 'cottage', image: File.open('app/assets/images/quiet_yurt.jpg'))
+        home_type: 'cottage', image: File.open('app/assets/images/quiet_yurt.jpg'),
+        general_description: 'description')
 
 bnb5 = Bnb.create!(title: 'Rustic ranch', host_id: u5.id, lat: 40.710716,
         lng: -73.819509,
@@ -74,20 +78,21 @@ bnb5 = Bnb.create!(title: 'Rustic ranch', host_id: u5.id, lat: 40.710716,
         cleaning_fee: 23, weekly_discount: 0.23, monthly_discount: 0.23, wifi: true,
         internet: true, kitchen: true, parking: true, essentials: true, pets_allowed: true,
         smoking_allowed: true, rating: 3, bed_count: 2, room_type: 'shared_room',
-        home_type: 'ranch', image: File.open('app/assets/images/treehouse.jpg'))
+        home_type: 'ranch', image: File.open('app/assets/images/treehouse.jpg'),
+        general_description: 'description')
 
 Review.destroy_all
 r1 = Review.create!(bnb_id: bnb1.id, author_id: u2.id, body: 'Wonderful place with great hosts.',
                     accuracy: 5, communication: 5, cleanliness: 5, location: 5, check_in: 5, value: 5,
                     rating: 5)
 
-r2 = Review.create!(bnb_id: bnb1.id, author_id: u3.id, body: 'Very nice--I like!',
-                    accuracy: 5, communication: 5, cleanliness: 5, location: 5, check_in: 5, value: 5,
-                    rating: 5)
+r2 = Review.create!(bnb_id: bnb1.id, author_id: u3.id, body: 'Did not exceed my expectations',
+                    accuracy: 3, communication: 3, cleanliness: 3, location: 3, check_in: 3, value: 3,
+                    rating: 3)
 
-r3 = Review.create!(bnb_id: bnb1.id, author_id: u4.id, body: 'This place sucked',
-                    accuracy: 5, communication: 5, cleanliness: 5, location: 5, check_in: 5, value: 5,
-                    rating: 5)
+r3 = Review.create!(bnb_id: bnb1.id, author_id: u4.id, body: 'This place was not good',
+                    accuracy: 1, communication: 2, cleanliness: 2, location: 2, check_in: 3, value: 4,
+                    rating: 2)
 
 r4 = Review.create!(bnb_id: bnb2.id, author_id: u4.id, body: '5/5 would come back again',
                     accuracy: 5, communication: 5, cleanliness: 5, location: 5, check_in: 5, value: 5,

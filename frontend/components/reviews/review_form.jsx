@@ -79,40 +79,46 @@ class ReviewForm extends React.Component {
 
   render() {
     return (
-      <div> Leave a review!
+      <div>
         <form id="review-form" onSubmit={this.handleSubmit}>
-          <div>Accuracy
+          <div className="review-form-line">Accuracy
             <input
+              id="review-input"
               type="number"
               placeholder="Enter a number between 1 and 5"
               onChange={this.update('accuracy')}/>
           </div>
-          <div>Communication
+          <div className="review-form-line">Communication
             <input
+              id="review-input"
               type="number"
               placeholder="Enter a number between 1 and 5"
               onChange={this.update('communication')}/>
           </div>
-          <div>Cleanliness
+          <div className="review-form-line">Cleanliness
             <input
+              id="review-input"
               type="number"
               placeholder="Enter a number between 1 and 5"
               onChange={this.update('cleanliness')}/>
           </div>
-          <div>Location
+          <div className="review-form-line">Location
             <input
+              id="review-input"
               type="number"
               placeholder="Enter a number between 1 and 5"
               onChange={this.update('location')}/>
           </div>
-          <div>Check in
+          <div className="review-form-line">Check in
             <input
+              id="review-input"
               type="number"
               placeholder="Enter a number between 1 and 5"
               onChange={this.update('checkIn')}/>
           </div>
-          <div>Value
+          <div className="review-form-line">Value
             <input
+              id="review-input"
               type="number"
               placeholder="Enter a number between 1 and 5"
               onChange={this.update('value')}/>

@@ -11,9 +11,7 @@
 
 Wherebnb is a web application that aims to replicate the functionality and
 experience of the popular bed and breakfast website, Airbnb. It is built using
-Ruby on Rails and React/Redux. By the end of Week 9 of the App Academy course,
-this web app will satisfy the following criteria, bug free and with adequate
-styling and seed data.
+Ruby on Rails and React/Redux. By the end of the week, the site should satisfy the following criteria:
 
 
 - [ ] Hosting on Heroku

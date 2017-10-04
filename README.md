@@ -1,14 +1,11 @@
 
 # WhereBnb?
 
----
-
 WhereBnb? is a web application inspired by AirBnb that allows users to search for and book bed and breakfasts. It uses the Ruby on Rails framework on the back end. On the front end, it uses a combination of React.js and Redux. The database used is PostgreSQL.  
 
 ## Current Features
 
 ---
-
 ### Google Map API Search
 
 The most prominent feature on the application, the map search, appears on the search page. The Google Map interface allows users to search for their desired bed and breakfasts by location using the intuitive dragging and zoom features.
@@ -114,7 +111,6 @@ end
 ## Future Features
 
 ---
-
 ### User Profiles
 
 Create a page for users to customize their settings and allow them to view their bookings and related personal information.
